@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关于hexo博客 主题simperlog踩过的坑 | 我的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在搭建博客选主题时，由于个人喜好简单的风格，一样便选中了simperlog，但配置后发下部分功能不能正常使用，出现了以下几个问题： 出现问题1：点击文章链接跳转到了 Example Domain页面，而不是跳转至文章页面。  由于我更换其他主题能够正常跳转至文章页面，因此我觉得应该是跳转的路径问题。 于是，我就查看了其他主题的跳转方法，仿照了一下，结果真成功了。 更改如下：原本标签地址如图：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于hexo博客 主题simperlog踩过的坑">
+<meta property="og:url" content="http://example.com/2021/04/24/%E5%85%B3%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2-%E4%B8%BB%E9%A2%98simperlog%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="在搭建博客选主题时，由于个人喜好简单的风格，一样便选中了simperlog，但配置后发下部分功能不能正常使用，出现了以下几个问题： 出现问题1：点击文章链接跳转到了 Example Domain页面，而不是跳转至文章页面。  由于我更换其他主题能够正常跳转至文章页面，因此我觉得应该是跳转的路径问题。 于是，我就查看了其他主题的跳转方法，仿照了一下，结果真成功了。 更改如下：原本标签地址如图：">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/changa-code/blog-images/raw/master/image-20210424135826060.png">
+<meta property="og:image" content="https://gitee.com/changa-code/blog-images/raw/master/289aa418-3843-444e-8612-d06587000313.png">
+<meta property="og:image" content="https://gitee.com/changa-code/blog-images/raw/master/ac2405f4-b607-4c91-810b-078be0dea72c.png">
+<meta property="og:image" content="https://gitee.com/changa-code/blog-images/raw/master/129d8891-9a0d-4800-ac39-32e8dff43181.png">
+<meta property="og:image" content="https://gitee.com/changa-code/blog-images/raw/master/a6f3209e-2845-415f-9005-0072b9f7c182.png">
+<meta property="og:image" content="https://gitee.com/changa-code/blog-images/raw/master/271c77f0-ccee-48cd-acff-c7b94a5ff4a5.jpg">
+<meta property="og:image" content="https://gitee.com/changa-code/blog-images/raw/master/00a6ed60-d098-46c1-97bb-c298d7d706f6.png">
+<meta property="article:published_time" content="2021-04-24T05:49:17.000Z">
+<meta property="article:modified_time" content="2021-04-24T06:07:18.700Z">
+<meta property="article:author" content="Zebin Hong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/changa-code/blog-images/raw/master/image-20210424135826060.png">
+  
+  
+
+  <script type="text/javascript">
+  function jqueryLoaded() {
+    window.postMessage('jquery-load', '*');
+  }
+  </script>
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <script defer src="https://use.fontawesome.com/a49b4f783c.js"></script>
+  <script defer src="//code.jquery.com/jquery-3.2.1.min.js" onload="jqueryLoaded()"></script>
+  <script defer src="/js/script.js"></script>
+
+  
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+    window.addEventListener("message", function(msg) {
+      if(msg.data === 'jquery-load') {
+        $('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />');
+      }
+    });
+    </script>
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div class="outer">
+    <div class="title">
+      <a href="/" id="logo"><h1>我的博客</h1></a>
+      <div>Zebin Hong’s blog</div>
+    </div>
+    <div class="flex-spacer"></div>
+    <nav class="nav">
+      <div>
+        
+          <a href="/" class="nav-link">博客</a>
+        
+          <a href="/about" class="nav-link">关于</a>
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+    <div class="outer sidebar">
+      <section id="main">
+    <article id="post-关于hexo博客-主题simperlog踩过的坑" class="card article article-type-post" itemscope itemprop="blogPost">
+        
+            <div class="article-meta">
+                <time datetime="2021-04-24T05:49:17.000Z" itemprop="datePublished">2021-04-24</time>
+
+            </div>
+            
+                <div class="article-inner">
+                    
+
+                        
+                            <header class="article-header">
+                                
+  <h1 class="article-title" itemprop="name">
+    关于hexo博客 主题simperlog踩过的坑
+  </h1>
+
+
+                            </header>
+                            
+                                <div class="article-entry" itemprop="articleBody">
+                                    <p><img src="https://gitee.com/changa-code/blog-images/raw/master/image-20210424135826060.png" alt="image-20210424135826060"></p>
+<p>在搭建博客选主题时，由于个人喜好简单的风格，一样便选中了simperlog，但配置后发下部分功能不能正常使用，出现了以下几个问题：</p>
+<h2 id="出现问题1："><a href="#出现问题1：" class="headerlink" title="出现问题1："></a>出现问题1：</h2><p>点击文章链接跳转到了 Example Domain页面，而不是跳转至文章页面。</p>
+<p><img src="https://gitee.com/changa-code/blog-images/raw/master/289aa418-3843-444e-8612-d06587000313.png" alt="img"></p>
+<p>由于我更换其他主题能够正常跳转至文章页面，因此我觉得应该是跳转的路径问题。</p>
+<p>于是，我就查看了其他主题的跳转方法，仿照了一下，结果真成功了。</p>
+<h2 id="更改如下："><a href="#更改如下：" class="headerlink" title="更改如下："></a>更改如下：</h2><p>原本标签地址如图：</p>
+<p><img src="https://gitee.com/changa-code/blog-images/raw/master/ac2405f4-b607-4c91-810b-078be0dea72c.png" alt="img"></p>
+<p>将a标签处的地址改为  href=“&lt;%= post.permalink %&gt;”</p>
+<p>如下：</p>
+<p><img src="https://gitee.com/changa-code/blog-images/raw/master/129d8891-9a0d-4800-ac39-32e8dff43181.png" alt="img"></p>
+<p>并在 article.ejs 文件中添加&lt;% permalink = config.url + config.root + post.path %&gt;</p>
+<p>以下内容即可：</p>
+<p><img src="https://gitee.com/changa-code/blog-images/raw/master/a6f3209e-2845-415f-9005-0072b9f7c182.png" alt="img"></p>
+<h2 id="出现问题2："><a href="#出现问题2：" class="headerlink" title="出现问题2："></a>出现问题2：</h2><p>点击右上角的 关于 ，会出现“Cannot GET/about”的错误，无法跳转到about页面</p>
+<p><img src="https://gitee.com/changa-code/blog-images/raw/master/271c77f0-ccee-48cd-acff-c7b94a5ff4a5.jpg" alt="img"></p>
+<p>上网查了之后，发现原来是<strong>没有初始化目录</strong>。由于我的路径是导到了about.ejs文件，所以我要初始化一下about目录。</p>
+<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><p>在git控制台输入，如：hexo new page “about”，初始化分类目录。</p>
+<p>打开博客目录下的source文件夹，在这里会出现一个about文件夹，打开有index.md，可以更改显示内容。</p>
+<p><img src="https://gitee.com/changa-code/blog-images/raw/master/00a6ed60-d098-46c1-97bb-c298d7d706f6.png" alt="img"></p>
+<p>这样就可以使用啦。</p>
+<p>附上解决问题的作者的一句忠告：</p>
+<p>  <strong>总结：一定要看官方文档，一定要看官方文档，一定要看官方文档，重要的事情要说三遍。</strong></p>
+
+                                </div>
+                                
+                                    <footer class="article-footer">
+                                        
+
+                                            <a data-url="http://example.com/2021/04/24/%E5%85%B3%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2-%E4%B8%BB%E9%A2%98simperlog%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" data-id="cknvco5130004k8u29da46sh2" class="article-share-link">
+                                                share
+                                            </a>
+                                            <div class="article-share-box">
+  <div class="article-share-links">
+    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fexample.com%2F2021%2F04%2F24%2F%25E5%2585%25B3%25E4%25BA%258Ehexo%25E5%258D%259A%25E5%25AE%25A2-%25E4%25B8%25BB%25E9%25A2%2598simperlog%25E8%25B8%25A9%25E8%25BF%2587%25E7%259A%2584%25E5%259D%2591%2F" class="article-share-twitter" target="_blank" title="Twitter"></a>
+    <a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fexample.com%2F2021%2F04%2F24%2F%25E5%2585%25B3%25E4%25BA%258Ehexo%25E5%258D%259A%25E5%25AE%25A2-%25E4%25B8%25BB%25E9%25A2%2598simperlog%25E8%25B8%25A9%25E8%25BF%2587%25E7%259A%2584%25E5%259D%2591%2F" class="article-share-facebook" target="_blank" title="Facebook"></a>
+    <a href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Fexample.com%2F2021%2F04%2F24%2F%25E5%2585%25B3%25E4%25BA%258Ehexo%25E5%258D%259A%25E5%25AE%25A2-%25E4%25B8%25BB%25E9%25A2%2598simperlog%25E8%25B8%25A9%25E8%25BF%2587%25E7%259A%2584%25E5%259D%2591%2F" class="article-share-linkedin" target="_blank" title="LinkedIn"></a>
+    <a href="https://plus.google.com/share?url=http%3A%2F%2Fexample.com%2F2021%2F04%2F24%2F%25E5%2585%25B3%25E4%25BA%258Ehexo%25E5%258D%259A%25E5%25AE%25A2-%25E4%25B8%25BB%25E9%25A2%2598simperlog%25E8%25B8%25A9%25E8%25BF%2587%25E7%259A%2584%25E5%259D%2591%2F" class="article-share-google" target="_blank" title="Google+"></a>
+  </div>
+</div>
+
+                                    </footer>
+                                    
+                </div>
+    </article>
+
+    
+</section>
+      
+        <aside id="sidebar">
+  <div class="card">
+    
+      <div id="about-widget">
+  <p><p>Hello!<p><p>这里是我的博客，我会在这里记录下学习，技术与生活！</p></p>
+  <div class="user-image">
+    <img src="/css/images/%E4%B8%8B%E8%BD%BD.jfif">
+  </div>
+  <p class="border-bottom"></p>
+</div>
+
+    
+      <div id="contact-widget">
+    <p>
+        联系:</p>
+    <p>
+        有问题欢迎随时
+
+            <a href="mailto:303170690@qq.com" title="发邮箱">发邮箱</a>
+                给我
+    </p>
+    <!-- <div id="follow-icons">
+        <p>联系：</p>
+                    <a target="_blank" rel="noopener" href="http://email.com/303170690@qq.com"><i class="fa fa-instagram fa-2x"></i></a>
+                                                                                <a target="_blank" rel="noopener" href="http://github.com/CHANGEA-code"><i class="fa fa-github-square fa-2x"></i></a>
+                                                                                                                                                                                                                </div> -->
+</div>
+    
+  </div>
+</aside>
+
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Zebin Hong
+      <span class="pull-right">
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+    
+
+
+
+
+  </div>
+</body>
+</html>
