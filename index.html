@@ -1,193 +1,665 @@
 <!DOCTYPE html>
-<html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
 <head>
-  <meta charset="utf-8">
-  
   <title>我的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="我的博客">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Zebin Hong">
-<meta name="twitter:card" content="summary">
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="我的博客">
+    <meta name="author" content="Zebin Hong">
+    <meta name="description" content="Zebin Hong’s blog" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
   
   
-
-  <script type="text/javascript">
-  function jqueryLoaded() {
-    window.postMessage('jquery-load', '*');
-  }
-  </script>
-
   
-<link rel="stylesheet" href="/css/style.css">
 
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
 
-  <script defer src="https://use.fontawesome.com/a49b4f783c.js"></script>
-  <script defer src="//code.jquery.com/jquery-3.2.1.min.js" onload="jqueryLoaded()"></script>
-  <script defer src="/js/script.js"></script>
+<!--
+<body class="home-template">
+-->
+<body id="index" class="lightnav animsition">
 
-  
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-    <script type="text/javascript">
-    window.addEventListener("message", function(msg) {
-      if(msg.data === 'jquery-load') {
-        $('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />');
-      }
-    });
-    </script>
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
+      <!-- ============================ Off-canvas navigation =========================== -->
 
-<body>
-  <div id="container">
-    <header id="header">
-  <div class="outer">
-    <div class="title">
-      <a href="/" id="logo"><h1>我的博客</h1></a>
-      <div>Zebin Hong’s blog</div>
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
     </div>
-    <div class="flex-spacer"></div>
-    <nav class="nav">
-      <div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">我的博客</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <!-- // .col-md-12 -->
+        </div>
+        <div class="herofade beige-dk"></div>
+    </div>
+</section>
+
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
+
+<!-- ============================ END Hero Image =========================== -->
+<!-- ============================ Content =========================== -->
+
+<section id="intro">
+    <div class="container">
         
-          <a href="/" class="nav-link">博客</a>
-        
-          <a href="/about" class="nav-link">关于</a>
-        
-      </div>
-    </nav>
-  </div>
-</header>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/09/05/二叉堆/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-09-05T02:40:48.183Z" itemprop="datePublished">
+          2021-09-05
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        二叉堆1.C++表示12priority_queue&lt;int&gt; pq;//最大堆优先队列，默认priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt;&gt; pq;//最小堆优先队列
 
-    <div class="outer sidebar">
-      <section id="main">
-    <div class="post card">
-        <div class="border-bottom">
-            <a href="/2021/04/24/关于hexo博客-主题simperlog踩过的坑/">
-                <h1 class="article-title ">
-                    关于hexo博客 主题simperlog踩过的坑
-                </h1>
-            </a>
-            <time datetime="2021-04-24T05:49:17.000Z" itemprop="datePublished">2021-04-24</time>
+2.常用方法123push(val); //插入pop(); //删除pq.size();	//堆的大小
+
+3.优先级队列原理
+原理：优先级队列插入，删除元素都会将数组自动排序好。
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/09/05/二叉堆/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
         </div>
-        <div class="content">
-            
-                <p></p>
-                <a href="/2021/04/24/关于hexo博客-主题simperlog踩过的坑/">
-                    阅读全文
-                </a>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/08/20/labuladong的算法小抄/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-08-20T02:44:55.556Z" itemprop="datePublished">
+          2021-08-20
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        labuladong的算法小抄1.二分查找：
+模板：
+
+int binary_search(int[] nums, int target) &#123;
+    int left = 0, right = nums.length - 1; 
+    while(left &lt;= right) &#123;
+        int mid = left + (right - left) / 2;
+        if (nums[mi
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/08/20/labuladong的算法小抄/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/08/08/Java图形化界面/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-08-07T16:08:39.035Z" itemprop="datePublished">
+          2021-08-08
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        Java图形化界面简单的窗体方法：
+setBounds(x,y,width,height)方法：可实现一步调整组件，是setLocation(x,y)和setSize(width,height)的结合。
+resizable属性：
+isResizable()：获取resizable值
+ setResizable(boolean resizable)：设置窗体是否允许用户改变窗体的大小
+
+
+
+教训：
+设置图标：
+
+Image img = n
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/08/08/Java图形化界面/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/07/29/IDEA javaweb遇到的问题：/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-07-29T13:21:10.413Z" itemprop="datePublished">
+          2021-07-29
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        IDEA javaweb遇到的问题：1.HTTP状态码500，内部服务器错误
+编写了Servlet类，并通过web.xml映射到服务器中，打开tomcat服务器总是访问不到该Servlet类。
+
+
+
+原因：对Librariesli和Artifacts的配置不够了解，导致出现错误。
+
+首先，了解一下Libraries，它翻译为函数库。你添加进它里面的jar包可以组织成一个个包，如图中的bookcity。如何添加：打开项目project s
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/07/29/IDEA javaweb遇到的问题：/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/07/29/数据结构：二叉树专题/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-07-29T00:26:16.987Z" itemprop="datePublished">
+          2021-07-29
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        数据结构：二叉树专题1.生成二叉树：根据中序和后序遍历生成二叉树：根据中序和前序遍历生成二叉树：
+二者的解法十分相似。都是先根据后序或者前序遍历得到根节点，再根据中序遍历将二叉树分为左右子树。接着递归遍历左右子树，知道子节点为空。
+
+力扣题解：https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/soluti
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/07/29/数据结构：二叉树专题/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/07/26/在IDEA中打开Maven新建一个javaweb项目/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-07-26T07:40:33.203Z" itemprop="datePublished">
+          2021-07-26
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        在IDEA中打开Maven新建一个javaweb项目注意1.Maven文件夹中conf下的settings.xml文件配置1）添加仓库路径：
+1&lt;localRepository&gt;D:\APP\apache-maven-3.6.1\maven_repo&lt;&#x2F;localRepository&gt;
+
+
+
+2）设置阿里镜像：
+123456&lt;mirror&gt;		&lt;id&gt;aliyunmaven&lt
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/07/26/在IDEA中打开Maven新建一个javaweb项目/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/07/12/Java笔记/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-07-12T03:20:25.675Z" itemprop="datePublished">
+          2021-07-12
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        Java笔记一.语言基础1.一旦创建了 String 对象，那它的值就无法改变了理解：值无法改变指的是一开始String指向的内存空间的值不再改变。
+若更改String的值的话，它会重新创建一块空间，舍弃原来的空间。
+
+要想对字符串修改的话，需要用StringBuffer 和 StringBuilder 类。
+
+2.StringBuffer和StringBuilder：
+由于 StringBuilder 相较于 StringBuffer
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/07/12/Java笔记/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/06/30/《linux鸟哥私饭菜》笔记/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-06-30T08:19:15.350Z" itemprop="datePublished">
+          2021-06-30
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        《linux鸟哥私饭菜》笔记第五章 linux的文件权限与目录配置1.目录的介绍：
+
+/usr目录不是用户user的意识，是unix software resource的缩写。功能类似于存放软件文件，数据的地方，如window下的“C:\Window(其中的一部分) + C:\program files\”  
+
+/var目录：主要针队经常性变动的文件，包括缓存，日志文件，以及某些软件运行时产生的文件。
+
+/tmp目录：这是让一般用户或
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/06/30/《linux鸟哥私饭菜》笔记/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/06/25/计组笔记/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-06-25T05:57:14.893Z" itemprop="datePublished">
+          2021-06-25
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        计组笔记为什么8位的有符号二进制数表示的范围是-128~127？
+原因就在于计算机中存储数据是以补码的方式存储的，原因在于，使用补码，可以将符号位和数值域统一处理；同时，加法和减法也可以统一处理，用加法来替代减法。
+
+其次，补码的0没有正负之分，于是，0000 0000 表示为0，但1000 0000表示为什么呢？答案就是为-128。
+
+
+
+
+上图的补码推导最后发下 补码1000 0000可以表示为-128，那它的原码是什么？通过  符
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/06/25/计组笔记/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/06/17/mysql学习笔记/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-06-17T06:01:59.059Z" itemprop="datePublished">
+          2021-06-17
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        mysql学习笔记软件下载：1.如何将mysql卸载干净？
+
+2.dos命令行登录mysql
+12mysql [-h 主机号 -P端口号]-u root -p若为本机，则可省略主机号和端口号。
+
+退出mysql：
+1exit
+
+3.mysql常用命令：
+123456show databases;	&#x2F;&#x2F;输出所有的数据库名称use test;	&#x2F;&#x2F;使用数据库testshow tables;	&#x2F
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/06/17/mysql学习笔记/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <nav class="pagination" role="pagination">
+          
+          <a class="pull-right" href="/page/2/">Older Posts →</a>
+        </nav>
+    </div>
+</section>
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
         </div>
     </div>
-    
-    <div class="post card">
-        <div class="border-bottom">
-            <a href="/2021/04/24/git的使用/">
-                <h1 class="article-title ">
-                    git的使用
-                </h1>
-            </a>
-            <time datetime="2021-04-24T02:44:20.000Z" itemprop="datePublished">2021-04-24</time>
-        </div>
-        <div class="content">
-            
-                <p></p>
-                <a href="/2021/04/24/git的使用/">
-                    阅读全文
-                </a>
-        </div>
-    </div>
-    
-    <div class="post card">
-        <div class="border-bottom">
-            <a href="/2021/04/23/imagetext/">
-                <h1 class="article-title ">
-                    imagetext
-                </h1>
-            </a>
-            <time datetime="2021-04-23T15:27:59.000Z" itemprop="datePublished">2021-04-23</time>
-        </div>
-        <div class="content">
-            
-                <p></p>
-                <a href="/2021/04/23/imagetext/">
-                    阅读全文
-                </a>
-        </div>
-    </div>
-    
-    <div class="post card">
-        <div class="border-bottom">
-            <a href="/2021/04/22/hello-world/">
-                <h1 class="article-title ">
-                    Hexo的使用
-                </h1>
-            </a>
-            <time datetime="2021-04-22T15:40:40.369Z" itemprop="datePublished">2021-04-22</time>
-        </div>
-        <div class="content">
-            
-                <p></p>
-                <a href="/2021/04/22/hello-world/">
-                    阅读全文
-                </a>
-        </div>
-    </div>
-    
-        </section>
+</section>
+<!-- ============================ END Content =========================== -->
+
       
-        <aside id="sidebar">
-  <div class="card">
-    
-      <div id="about-widget">
-  <p><p>Hello!<p><p>这里是我的博客，我会在这里记录下学习，技术与生活！</p></p>
-  <div class="user-image">
-    <img src="/css/images/%E4%B8%8B%E8%BD%BD.jfif">
-  </div>
-  <p class="border-bottom"></p>
-</div>
+<!-- ============================ Footer =========================== -->
 
-    
-      <div id="contact-widget">
-    <p>
-        联系:</p>
-    <p>
-        有问题欢迎随时
-
-            <a href="mailto:303170690@qq.com" title="发邮箱">发邮箱</a>
-                给我
-    </p>
-    <!-- <div id="follow-icons">
-        <p>联系：</p>
-                    <a target="_blank" rel="noopener" href="http://email.com/303170690@qq.com"><i class="fa fa-instagram fa-2x"></i></a>
-                                                                                <a target="_blank" rel="noopener" href="http://github.com/CHANGEA-code"><i class="fa fa-github-square fa-2x"></i></a>
-                                                                                                                                                                                                                </div> -->
-</div>
-    
-  </div>
-</aside>
-
-      
-    </div>
-    <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2021 Zebin Hong
-      <span class="pull-right">
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-      </span>
-    </div>
-  </div>
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Zebin Hong. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
 </footer>
 
-    
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
 
 
-
-  </div>
+      
 </body>
 </html>

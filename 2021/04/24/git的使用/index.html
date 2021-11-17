@@ -1,181 +1,363 @@
 <!DOCTYPE html>
-<html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
 <head>
-  <meta charset="utf-8">
-  
   <title>git的使用 | 我的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.克隆github&#x2F;gitee上的项目：1.创建一个文件夹2.在这个文件夹打开git客户端3.输入 git init,生成一个.git文件，你就可以靠这个文件管理这个文件夹  4.输入git clone +仓库地址      成功：  2.上传项目或者修改到github：1)、git init 初始化仓库，将这个目录变成git可以管理的仓库（上传修改的话就不用这步了）2)、 然后使用git ad">
-<meta property="og:type" content="article">
-<meta property="og:title" content="git的使用">
-<meta property="og:url" content="http://example.com/2021/04/24/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
-<meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="1.克隆github&#x2F;gitee上的项目：1.创建一个文件夹2.在这个文件夹打开git客户端3.输入 git init,生成一个.git文件，你就可以靠这个文件管理这个文件夹  4.输入git clone +仓库地址      成功：  2.上传项目或者修改到github：1)、git init 初始化仓库，将这个目录变成git可以管理的仓库（上传修改的话就不用这步了）2)、 然后使用git ad">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gitee.com/changa-code/blog-images/raw/master/40ace2e5-87ae-4ca9-b936-f3fcb0bac768.png">
-<meta property="og:image" content="https://gitee.com/changa-code/blog-images/raw/master/20210424104019.png">
-<meta property="og:image" content="https://gitee.com/changa-code/blog-images/raw/master/4629194c-73be-480f-b6fd-40fbae55710d.png">
-<meta property="article:published_time" content="2021-04-24T02:44:20.000Z">
-<meta property="article:modified_time" content="2021-04-24T02:50:06.743Z">
-<meta property="article:author" content="Zebin Hong">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/changa-code/blog-images/raw/master/40ace2e5-87ae-4ca9-b936-f3fcb0bac768.png">
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="我的博客">
+    <meta name="author" content="Zebin Hong">
+    <meta name="description" content="Zebin Hong’s blog" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
   
   
-
-  <script type="text/javascript">
-  function jqueryLoaded() {
-    window.postMessage('jquery-load', '*');
-  }
-  </script>
-
   
-<link rel="stylesheet" href="/css/style.css">
 
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
 
-  <script defer src="https://use.fontawesome.com/a49b4f783c.js"></script>
-  <script defer src="//code.jquery.com/jquery-3.2.1.min.js" onload="jqueryLoaded()"></script>
-  <script defer src="/js/script.js"></script>
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
 
-  
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-    <script type="text/javascript">
-    window.addEventListener("message", function(msg) {
-      if(msg.data === 'jquery-load') {
-        $('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />');
-      }
-    });
-    </script>
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
+      <!-- ============================ Off-canvas navigation =========================== -->
 
-<body>
-  <div id="container">
-    <header id="header">
-  <div class="outer">
-    <div class="title">
-      <a href="/" id="logo"><h1>我的博客</h1></a>
-      <div>Zebin Hong’s blog</div>
-    </div>
-    <div class="flex-spacer"></div>
-    <nav class="nav">
-      <div>
-        
-          <a href="/" class="nav-link">博客</a>
-        
-          <a href="/about" class="nav-link">关于</a>
-        
-      </div>
-    </nav>
-  </div>
-</header>
-
-    <div class="outer sidebar">
-      <section id="main">
-    <article id="post-git的使用" class="card article article-type-post" itemscope itemprop="blogPost">
-        
-            <div class="article-meta">
-                <time datetime="2021-04-24T02:44:20.000Z" itemprop="datePublished">2021-04-24</time>
-
-            </div>
-            
-                <div class="article-inner">
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
                     
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
 
-                        
-                            <header class="article-header">
-                                
-  <h1 class="article-title" itemprop="name">
-    git的使用
-  </h1>
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
 
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
 
-                            </header>
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">我的博客</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
                             
-                                <div class="article-entry" itemprop="articleBody">
-                                    <h2 id="1-克隆github-gitee上的项目："><a href="#1-克隆github-gitee上的项目：" class="headerlink" title="1.克隆github/gitee上的项目："></a>1.克隆github/gitee上的项目：</h2><p>1.创建一个文件夹<br>2.在这个文件夹打开git客户端<br>3.输入 git init,生成一个.git文件，你就可以靠这个文件管理这个文件夹</p>
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2021-04-24T02:44:20.000Z" itemprop="datePublished">
+          2021-04-24
+      </time>
+    
+</span>
+                <h1>git的使用</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="1-克隆github-gitee上的项目："><a href="#1-克隆github-gitee上的项目：" class="headerlink" title="1.克隆github/gitee上的项目："></a>1.克隆github/gitee上的项目：</h2><p>1.创建一个文件夹<br>2.在这个文件夹打开git客户端<br>3.输入 git init,生成一个.git文件，你就可以靠这个文件管理这个文件夹</p>
 <p><img src="https://gitee.com/changa-code/blog-images/raw/master/40ace2e5-87ae-4ca9-b936-f3fcb0bac768.png" alt="img"></p>
 <p>4.输入git clone +仓库地址    </p>
 <p><img src="https://gitee.com/changa-code/blog-images/raw/master/20210424104019.png"></p>
 <p>成功：</p>
 <p><img src="https://gitee.com/changa-code/blog-images/raw/master/4629194c-73be-480f-b6fd-40fbae55710d.png" alt="img"></p>
-<h2 id="2-上传项目或者修改到github："><a href="#2-上传项目或者修改到github：" class="headerlink" title="2.上传项目或者修改到github："></a>2.上传项目或者修改到github：</h2><p>1)、git init 初始化仓库，将这个目录变成git可以管理的仓库（上传修改的话就不用这步了）<br>2)、 然后使用git add . 将文件添加到暂存区里面去，注意后边的 .<br>3)、然后执行git commit -m ‘描述内容’ 命令将文件提交到仓库<br>4)、然后关联git仓库，因为此时git还不知道要将我们的项目添加到哪里去。<br>接下来执行命令：git remote add origin 远程仓库的地址<br>5)、然后执行git pull –rebase origin master命令，将文件与远程仓库进行合并<br>6)、然后将本地文件推送到gitee仓库中，<br>使用命令：git push -u origin master 命令</p>
+<h2 id="2-上传项目或者修改到github："><a href="#2-上传项目或者修改到github：" class="headerlink" title="2.上传项目或者修改到github："></a>2.上传项目或者修改到github：</h2><p>1)、git init 初始化仓库，将这个目录变成git可以管理的仓库（上传修改的话就不用这步了）</p>
+<p><img src="D:\appdata\blog\source_posts\git的使用.assets\image-20210811165343467.png" alt="image-20210811165343467"></p>
+<p>然后将需要上传的文件复制过来</p>
+<p><img src="D:\appdata\blog\source_posts\git的使用.assets\image-20210811165618687.png" alt="image-20210811165618687"></p>
+<p>2)、 然后使用git add . 将文件添加到暂存区里面去，注意后边的 .</p>
+<p>3)、然后执行git commit -m ‘描述内容’ 命令将文件提交到仓库</p>
+<p>4）创建main分支：git branch -M main</p>
+<p>5)、然后关联git仓库，因为此时git还不知道要将我们的项目添加到哪里去。<br>接下来执行命令：git remote add origin 远程仓库的地址</p>
+<p>6)、然后执行git pull –rebase origin main命令，将文件与远程仓库进行合并</p>
+<p>7)、然后将本地文件推送到gitee/github仓库中，<br>使用命令：git push -u origin main命令</p>
+<h3 id="github的官方命令："><a href="#github的官方命令：" class="headerlink" title="github的官方命令："></a>github的官方命令：</h3><p><img src="D:\appdata\blog\source_posts\git的使用.assets\image-20210811180355235.png" alt="image-20210811180355235"></p>
+<h2 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h2><h3 id="1-报错error-failed-to-push-some-refs-to-‘github-com-CHANGEA-code-TomatoClock-git’"><a href="#1-报错error-failed-to-push-some-refs-to-‘github-com-CHANGEA-code-TomatoClock-git’" class="headerlink" title="1.报错error: failed to push some refs to ‘github.com:CHANGEA-code/TomatoClock.git’"></a>1.报错error: failed to push some refs to ‘github.com:CHANGEA-code/TomatoClock.git’</h3><p><img src="D:\appdata\blog\source_posts\git的使用.assets\image-20210811171151343.png" alt="image-20210811171151343"></p>
+<ul>
+<li><p>原因：有可能远程的分支进行了更新，但是本地的分支落后了，这时候进行推送就出现问题。</p>
+</li>
+<li><p>解决：对分支进行合并，再推送。命令如下：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin main</span><br></pre></td></tr></table></figure>
 
-                                </div>
-                                
-                                    <footer class="article-footer">
-                                        
-
-                                            <a data-url="http://example.com/2021/04/24/git%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="cknvco50x0001k8u2dwheba77" class="article-share-link">
-                                                share
-                                            </a>
-                                            <div class="article-share-box">
-  <div class="article-share-links">
-    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fexample.com%2F2021%2F04%2F24%2Fgit%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8%2F" class="article-share-twitter" target="_blank" title="Twitter"></a>
-    <a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fexample.com%2F2021%2F04%2F24%2Fgit%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8%2F" class="article-share-facebook" target="_blank" title="Facebook"></a>
-    <a href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Fexample.com%2F2021%2F04%2F24%2Fgit%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8%2F" class="article-share-linkedin" target="_blank" title="LinkedIn"></a>
-    <a href="https://plus.google.com/share?url=http%3A%2F%2Fexample.com%2F2021%2F04%2F24%2Fgit%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8%2F" class="article-share-google" target="_blank" title="Google+"></a>
-  </div>
-</div>
-
-                                    </footer>
-                                    
-                </div>
-    </article>
-
+<h3 id="2-报错error：error-cannot-pull-with-rebase-You-have-unstaged-changes"><a href="#2-报错error：error-cannot-pull-with-rebase-You-have-unstaged-changes" class="headerlink" title="2.报错error：error: cannot pull with rebase: You have unstaged changes."></a>2.报错error：error: cannot pull with rebase: You have unstaged changes.</h3><p><img src="D:\appdata\blog\source_posts\git的使用.assets\image-20210817154801213.png" alt="image-20210817154801213"></p>
+<ul>
+<li>解决：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">先执行git stash</span><br><span class="line">再执行git pull –rebase</span><br><span class="line">最后再执行git stash pop</span><br><span class="line"></span><br><span class="line">git stash #可用来暂存当前正在进行的工作</span><br><span class="line">git stash pop #从Git栈中读取最近一次保存的内容</span><br></pre></td></tr></table></figure>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
+    <a class="pull-left" href="/2021/04/24/%E5%85%B3%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2-%E4%B8%BB%E9%A2%98simperlog%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" style="float: left;">
+        ← 关于hexo博客 主题simperlog踩过的坑
+    </a>
+    
+    
+    <a class="pull-right" href="/2021/04/23/imagetext/">
+        imagetext →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
 </section>
-      
-        <aside id="sidebar">
-  <div class="card">
-    
-      <div id="about-widget">
-  <p><p>Hello!<p><p>这里是我的博客，我会在这里记录下学习，技术与生活！</p></p>
-  <div class="user-image">
-    <img src="/css/images/%E4%B8%8B%E8%BD%BD.jfif">
-  </div>
-  <p class="border-bottom"></p>
-</div>
 
-    
-      <div id="contact-widget">
-    <p>
-        联系:</p>
-    <p>
-        有问题欢迎随时
-
-            <a href="mailto:303170690@qq.com" title="发邮箱">发邮箱</a>
-                给我
-    </p>
-    <!-- <div id="follow-icons">
-        <p>联系：</p>
-                    <a target="_blank" rel="noopener" href="http://email.com/303170690@qq.com"><i class="fa fa-instagram fa-2x"></i></a>
-                                                                                <a target="_blank" rel="noopener" href="http://github.com/CHANGEA-code"><i class="fa fa-github-square fa-2x"></i></a>
-                                                                                                                                                                                                                </div> -->
-</div>
-    
-  </div>
-</aside>
 
       
-    </div>
-    <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2021 Zebin Hong
-      <span class="pull-right">
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-      </span>
-    </div>
-  </div>
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Zebin Hong. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
 </footer>
 
-    
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
 
 
-
-  </div>
+      
 </body>
 </html>
