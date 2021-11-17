@@ -80,14 +80,8 @@
                 <ul class="sb-submenu">
                     
                         <li>
-                            <a href="/" target="_BLANK" class="animsition-link">
-                                AAA
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="/atom.xml" target="_BLANK" class="animsition-link">
-                                BBB
+                            <a href="https://timemail.net/" target="_BLANK" class="animsition-link">
+                                时光邮局
                             </a>
                         </li>
                         
@@ -95,26 +89,56 @@
             </li>
             
                 
+                    <li>
+                        <a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+                        <ul class="sb-submenu">
+                            
+                                <li>
+                                    <a href="/categories/编程/" class="animsition-link">
+                                        编程<small>(2)</small></a>
+                                </li>
+                                
+                        </ul>
+                    </li>
+                    
                         
                             <li>
-                                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                <a class="sb-toggle-submenu">Tags<span class="sb-caret"></span></a>
                                 <ul class="sb-submenu">
                                     
                                         <li>
-                                            <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
-                                                Kieran
-                                            </a>
+                                            <a href="/tags/C-C/" class="animsition-link">
+                                                C/C++<small>(1)</small></a>
                                         </li>
                                         
                                         <li>
-                                            <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
-                                                Name
-                                            </a>
+                                            <a href="/tags/hexo/" class="animsition-link">
+                                                hexo<small>(1)</small></a>
                                         </li>
                                         
                                 </ul>
                             </li>
                             
+                                
+                                    <li>
+                                        <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                        <ul class="sb-submenu">
+                                            
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
+                                                        Kieran
+                                                    </a>
+                                                </li>
+                                                
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
+                                                        Name
+                                                    </a>
+                                                </li>
+                                                
+                                        </ul>
+                                    </li>
+                                    
     </ul>
     <!-- Lists in Slidebars -->
     <ul class="sb-menu secondary">
@@ -156,7 +180,7 @@
                         </li>
                         <li class="nolink"><span>Always </span>Creative.</li>
                         
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a></li>
                             
                                 
                                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
@@ -189,21 +213,21 @@
 
     <!-- ============================ Header & Logo bar =========================== -->
       
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
+    <section id="intro">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <span class="post-meta">
       <time datetime="2021-06-13T08:48:55.573Z" itemprop="datePublished">
           2021-06-13
       </time>
     
 </span>
-                <h1></h1>
+                    <h1>
+                        
+                    </h1>
             </div>
-        </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h1 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h1><ul>
+            <div class="col-md-8 col-md-offset-2">
+                <h1 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h1><ul>
 <li><p>力扣地址：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/array-and-string/cpoo6/">https://leetcode-cn.com/leetbook/read/array-and-string/cpoo6/</a></p>
 </li>
 <li><p>思路：</p>
@@ -219,10 +243,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">int* buildNext(char* P)		&#x2F;&#x2F;构造next数组</span><br><span class="line">&#123;</span><br><span class="line">	int m &#x3D; (int)strlen(P);</span><br><span class="line">	int *N &#x3D; new int[m];	&#x2F;&#x2F;next数组</span><br><span class="line">	int t &#x3D; N[0] &#x3D; -1;		&#x2F;&#x2F;t为“模式串”指针</span><br><span class="line">	int j &#x3D; 0;	&#x2F;&#x2F;j是&quot;主&quot;指针</span><br><span class="line">	while(j&lt;m-1)	&#x2F;&#x2F;匹配到m-2个字符即可</span><br><span class="line">	&#123;</span><br><span class="line">		if(t&lt;0 || P[j] &#x3D;&#x3D; P[t])	&#x2F;&#x2F;若t&#x3D;&#x3D;-1或者匹配</span><br><span class="line">		&#123;</span><br><span class="line">			j++;</span><br><span class="line">			t++;</span><br><span class="line">			N[j] &#x3D; t;</span><br><span class="line">		&#125;</span><br><span class="line">		else					&#x2F;&#x2F;若不匹配</span><br><span class="line">			t &#x3D; N[t];			</span><br><span class="line">	&#125;</span><br><span class="line">	return N;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int match (char* P, char* S)	&#x2F;&#x2F; KMP 算法</span><br><span class="line">&#123; </span><br><span class="line">	int *next &#x3D; buildNext(P);	&#x2F;&#x2F;构造next表</span><br><span class="line">	int n &#x3D; (int)strlen(P),i&#x3D;0;		&#x2F;&#x2F;模式串</span><br><span class="line">	int m &#x3D; (int)strlen(S),j&#x3D;0;		&#x2F;&#x2F;主串</span><br><span class="line">	while(i&lt;n &amp;&amp; j&lt;m)</span><br><span class="line">	&#123;</span><br><span class="line">		if(i&#x3D;&#x3D;-1 || S[j] &#x3D;&#x3D; P[i])	&#x2F;&#x2F;匹配或者i&#x3D;&#x3D;-1,指针右移</span><br><span class="line">        &#123;</span><br><span class="line">	        j++;i++;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        	i &#x3D; next[i];</span><br><span class="line">	&#125;</span><br><span class="line">	delete []next;</span><br><span class="line">	return i-j;		&#x2F;&#x2F;放回主串匹配的初始字符</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+                    <div class="clearfix"></div>
+                    <hr class="nogutter">
+            </div>
+            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     <a class="pull-left" href="/2021/06/15/%E3%80%8A%E8%AE%A1%E7%BD%91%EF%BC%8C%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95%E3%80%8B%E7%AC%94%E8%AE%B0/" style="float: left;">
         ← 
@@ -235,7 +259,8 @@
     
 </nav>
 
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+                <div class="col-md-8 col-md-offset-2 col-sm-24">
+                    <script type="text/javascript">
   /**
    * 搜狐畅言
    */
@@ -284,10 +309,10 @@
   */
 
 </script>
-</div>
-    </div>
-</section>
 
+                </div>
+        </div>
+    </section>
 
       
 <!-- ============================ Footer =========================== -->
@@ -303,7 +328,7 @@
             <div class="social">
                 <ul>
                     
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
                     
                     
                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>

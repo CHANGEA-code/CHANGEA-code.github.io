@@ -80,14 +80,8 @@
                 <ul class="sb-submenu">
                     
                         <li>
-                            <a href="/" target="_BLANK" class="animsition-link">
-                                AAA
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="/atom.xml" target="_BLANK" class="animsition-link">
-                                BBB
+                            <a href="https://timemail.net/" target="_BLANK" class="animsition-link">
+                                时光邮局
                             </a>
                         </li>
                         
@@ -95,26 +89,56 @@
             </li>
             
                 
+                    <li>
+                        <a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+                        <ul class="sb-submenu">
+                            
+                                <li>
+                                    <a href="/categories/编程/" class="animsition-link">
+                                        编程<small>(2)</small></a>
+                                </li>
+                                
+                        </ul>
+                    </li>
+                    
                         
                             <li>
-                                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                <a class="sb-toggle-submenu">Tags<span class="sb-caret"></span></a>
                                 <ul class="sb-submenu">
                                     
                                         <li>
-                                            <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
-                                                Kieran
-                                            </a>
+                                            <a href="/tags/C-C/" class="animsition-link">
+                                                C/C++<small>(1)</small></a>
                                         </li>
                                         
                                         <li>
-                                            <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
-                                                Name
-                                            </a>
+                                            <a href="/tags/hexo/" class="animsition-link">
+                                                hexo<small>(1)</small></a>
                                         </li>
                                         
                                 </ul>
                             </li>
                             
+                                
+                                    <li>
+                                        <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                        <ul class="sb-submenu">
+                                            
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
+                                                        Kieran
+                                                    </a>
+                                                </li>
+                                                
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
+                                                        Name
+                                                    </a>
+                                                </li>
+                                                
+                                        </ul>
+                                    </li>
+                                    
     </ul>
     <!-- Lists in Slidebars -->
     <ul class="sb-menu secondary">
@@ -156,7 +180,7 @@
                         </li>
                         <li class="nolink"><span>Always </span>Creative.</li>
                         
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a></li>
                             
                                 
                                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
@@ -189,21 +213,21 @@
 
     <!-- ============================ Header & Logo bar =========================== -->
       
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
+    <section id="intro">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <span class="post-meta">
       <time datetime="2021-06-25T05:57:14.893Z" itemprop="datePublished">
           2021-06-25
       </time>
     
 </span>
-                <h1></h1>
+                    <h1>
+                        
+                    </h1>
             </div>
-        </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h1 id="计组笔记"><a href="#计组笔记" class="headerlink" title="计组笔记"></a>计组笔记</h1><h2 id="为什么8位的有符号二进制数表示的范围是-128-127？"><a href="#为什么8位的有符号二进制数表示的范围是-128-127？" class="headerlink" title="为什么8位的有符号二进制数表示的范围是-128~127？"></a>为什么8位的有符号二进制数表示的范围是-128~127？</h2><ul>
+            <div class="col-md-8 col-md-offset-2">
+                <h1 id="计组笔记"><a href="#计组笔记" class="headerlink" title="计组笔记"></a>计组笔记</h1><h2 id="为什么8位的有符号二进制数表示的范围是-128-127？"><a href="#为什么8位的有符号二进制数表示的范围是-128-127？" class="headerlink" title="为什么8位的有符号二进制数表示的范围是-128~127？"></a>为什么8位的有符号二进制数表示的范围是-128~127？</h2><ul>
 <li><p>原因就在于计算机中存储数据是以<strong>补码</strong>的方式存储的，原因在于，使用补码，可以将符号位和数值域统一处理；同时，加法和减法也可以统一处理，用加法来替代减法。</p>
 </li>
 <li><p>其次，补码的0没有正负之分，于是，0000 0000 表示为0，但1000 0000表示为什么呢？答案就是为-128。</p>
@@ -214,10 +238,10 @@
 <li>上图的补码推导最后发下 补码1000 0000可以表示为-128，那它的原码是什么？通过  符号位之外的位取反+1  得到 1 1000 0000，溢出的自动丢失，得到1000 0000，这不就是-0，由于0没有正负之分，于是就用这个1000 0000就表示为-128。</li>
 </ul>
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+                    <div class="clearfix"></div>
+                    <hr class="nogutter">
+            </div>
+            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     <a class="pull-left" href="/2021/06/30/%E3%80%8Alinux%E9%B8%9F%E5%93%A5%E7%A7%81%E9%A5%AD%E8%8F%9C%E3%80%8B%E7%AC%94%E8%AE%B0/" style="float: left;">
         ← 
@@ -230,7 +254,8 @@
     
 </nav>
 
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+                <div class="col-md-8 col-md-offset-2 col-sm-24">
+                    <script type="text/javascript">
   /**
    * 搜狐畅言
    */
@@ -279,10 +304,10 @@
   */
 
 </script>
-</div>
-    </div>
-</section>
 
+                </div>
+        </div>
+    </section>
 
       
 <!-- ============================ Footer =========================== -->
@@ -298,7 +323,7 @@
             <div class="social">
                 <ul>
                     
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
                     
                     
                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>

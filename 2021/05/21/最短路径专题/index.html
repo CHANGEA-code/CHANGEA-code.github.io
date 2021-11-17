@@ -80,14 +80,8 @@
                 <ul class="sb-submenu">
                     
                         <li>
-                            <a href="/" target="_BLANK" class="animsition-link">
-                                AAA
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="/atom.xml" target="_BLANK" class="animsition-link">
-                                BBB
+                            <a href="https://timemail.net/" target="_BLANK" class="animsition-link">
+                                时光邮局
                             </a>
                         </li>
                         
@@ -95,26 +89,56 @@
             </li>
             
                 
+                    <li>
+                        <a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+                        <ul class="sb-submenu">
+                            
+                                <li>
+                                    <a href="/categories/编程/" class="animsition-link">
+                                        编程<small>(2)</small></a>
+                                </li>
+                                
+                        </ul>
+                    </li>
+                    
                         
                             <li>
-                                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                <a class="sb-toggle-submenu">Tags<span class="sb-caret"></span></a>
                                 <ul class="sb-submenu">
                                     
                                         <li>
-                                            <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
-                                                Kieran
-                                            </a>
+                                            <a href="/tags/C-C/" class="animsition-link">
+                                                C/C++<small>(1)</small></a>
                                         </li>
                                         
                                         <li>
-                                            <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
-                                                Name
-                                            </a>
+                                            <a href="/tags/hexo/" class="animsition-link">
+                                                hexo<small>(1)</small></a>
                                         </li>
                                         
                                 </ul>
                             </li>
                             
+                                
+                                    <li>
+                                        <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                        <ul class="sb-submenu">
+                                            
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
+                                                        Kieran
+                                                    </a>
+                                                </li>
+                                                
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
+                                                        Name
+                                                    </a>
+                                                </li>
+                                                
+                                        </ul>
+                                    </li>
+                                    
     </ul>
     <!-- Lists in Slidebars -->
     <ul class="sb-menu secondary">
@@ -156,7 +180,7 @@
                         </li>
                         <li class="nolink"><span>Always </span>Creative.</li>
                         
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a></li>
                             
                                 
                                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
@@ -189,21 +213,21 @@
 
     <!-- ============================ Header & Logo bar =========================== -->
       
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
+    <section id="intro">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <span class="post-meta">
       <time datetime="2021-05-21T02:11:10.148Z" itemprop="datePublished">
           2021-05-21
       </time>
     
 </span>
-                <h1></h1>
+                    <h1>
+                        
+                    </h1>
             </div>
-        </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h1 id="最短路径专题"><a href="#最短路径专题" class="headerlink" title="最短路径专题"></a>最短路径专题</h1><h2 id="题型一：dj算法-dfs"><a href="#题型一：dj算法-dfs" class="headerlink" title="题型一：dj算法 + dfs"></a>题型一：dj算法 + dfs</h2><p>题目：甲级  1018 Public Bike Management (30 分)</p>
+            <div class="col-md-8 col-md-offset-2">
+                <h1 id="最短路径专题"><a href="#最短路径专题" class="headerlink" title="最短路径专题"></a>最短路径专题</h1><h2 id="题型一：dj算法-dfs"><a href="#题型一：dj算法-dfs" class="headerlink" title="题型一：dj算法 + dfs"></a>题型一：dj算法 + dfs</h2><p>题目：甲级  1018 Public Bike Management (30 分)</p>
 <p>链接：<a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805342720868352/problems/994805489282433024">https://pintia.cn/problem-sets/994805342720868352/problems/994805489282433024</a></p>
 <p>代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define Vertex 505</span><br><span class="line">#include&lt;limits.h&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">int arr[Vertex][Vertex];    &#x2F;&#x2F;邻接矩阵</span><br><span class="line">int weight[Vertex]; &#x2F;&#x2F;边的权重</span><br><span class="line">int d[Vertex];      &#x2F;&#x2F;每个顶点的最短路径长度</span><br><span class="line">int S[Vertex];      &#x2F;&#x2F;记录结点是否确定最短路径</span><br><span class="line">int back;   &#x2F;&#x2F;带回去的车</span><br><span class="line">int need;   &#x2F;&#x2F;发送出去的车</span><br><span class="line">int backMin &#x3D; INT_MAX;</span><br><span class="line">int needMin &#x3D; INT_MAX;</span><br><span class="line">vector&lt;int&gt; pre[Vertex], path, tempath;    &#x2F;&#x2F;存放前一顶点</span><br><span class="line">void dfs(int s)</span><br><span class="line">&#123;</span><br><span class="line">    tempath.push_back(s);</span><br><span class="line">    if (s &#x3D;&#x3D; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        need &#x3D; 0; back &#x3D; 0;</span><br><span class="line">        for (int j &#x3D; tempath.size() - 1; j &gt;&#x3D; 0; j--)</span><br><span class="line">        &#123;</span><br><span class="line">            int id &#x3D; tempath[j];</span><br><span class="line">            if (weight[id] &gt; 0)</span><br><span class="line">            &#123;</span><br><span class="line">                back +&#x3D; weight[id];</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                if (back &gt;&#x3D; (-weight[id]))</span><br><span class="line">                &#123;</span><br><span class="line">                    back +&#x3D; weight[id];</span><br><span class="line">                &#125;</span><br><span class="line">                else</span><br><span class="line">                &#123;</span><br><span class="line">                    need +&#x3D; -(back + weight[id]);</span><br><span class="line">                    back &#x3D; 0;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (need &lt; needMin)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F; cout&lt;&lt;&quot;back&quot;&lt;&lt;back&lt;&lt;endl;</span><br><span class="line">            needMin &#x3D; need;</span><br><span class="line">            backMin &#x3D; back;</span><br><span class="line">            path &#x3D; tempath;</span><br><span class="line">        &#125;</span><br><span class="line">        else if (need &#x3D;&#x3D; needMin &amp;&amp; back &lt; backMin)</span><br><span class="line">        &#123;</span><br><span class="line">            backMin &#x3D; back;</span><br><span class="line">            path &#x3D; tempath;</span><br><span class="line">        &#125;</span><br><span class="line">        tempath.pop_back();</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i &#x3D; 0; i &lt; pre[s].size(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        dfs(pre[s][i]);</span><br><span class="line">    &#125;</span><br><span class="line">    tempath.pop_back();</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int c, n, s, m;</span><br><span class="line">    cin &gt;&gt; c &gt;&gt; n &gt;&gt; s &gt;&gt; m;</span><br><span class="line">    &#x2F;&#x2F;初始化arr</span><br><span class="line">    for (int i &#x3D; 0; i &lt;&#x3D; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int j &#x3D; 0; j &lt;&#x3D; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            arr[i][j] &#x3D; INT_MAX;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i &#x3D; 1; i &lt;&#x3D; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int bike;</span><br><span class="line">        cin &gt;&gt; bike;</span><br><span class="line">        weight[i] &#x3D; bike - c &#x2F; 2;</span><br><span class="line">        &#x2F;&#x2F;初始化S</span><br><span class="line">        S[i] &#x3D; 0;</span><br><span class="line">        &#x2F;&#x2F;初始化d</span><br><span class="line">        d[i] &#x3D; INT_MAX;</span><br><span class="line">    &#125;</span><br><span class="line">    S[0] &#x3D; 1;</span><br><span class="line">    for (int i &#x3D; 1; i &lt;&#x3D; m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int a, b;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        cin &gt;&gt; arr[a][b];</span><br><span class="line">        arr[b][a] &#x3D; arr[a][b];  &#x2F;&#x2F;无向图</span><br><span class="line">        &#x2F;&#x2F;初始化d</span><br><span class="line">        if (a &#x3D;&#x3D; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            d[b] &#x3D; arr[a][b];</span><br><span class="line">            pre[b].push_back(a);</span><br><span class="line">        &#125;</span><br><span class="line">        else if (b &#x3D;&#x3D; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            d[a] &#x3D; arr[a][b];</span><br><span class="line">            pre[a].push_back(b);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    d[0] &#x3D; 0;</span><br><span class="line">    for (int i &#x3D; 1; i &lt;&#x3D; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int minNum &#x3D; INT_MAX;</span><br><span class="line">        int min &#x3D; -1;</span><br><span class="line">        for (int k &#x3D; 1; k &lt;&#x3D; n; k++)       &#x2F;&#x2F;给S集合找顶点</span><br><span class="line">        &#123;</span><br><span class="line">            if (!S[k] &amp;&amp; d[k] &lt; minNum)</span><br><span class="line">            &#123;</span><br><span class="line">                minNum &#x3D; d[k];</span><br><span class="line">                min &#x3D; k;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (min &#x3D;&#x3D; -1)</span><br><span class="line">            break;</span><br><span class="line">        S[min] &#x3D; 1;</span><br><span class="line">        for (int j &#x3D; 0; j &lt;&#x3D; n; j++)   &#x2F;&#x2F;更新最短路径</span><br><span class="line">        &#123;</span><br><span class="line">            if (!S[j] &amp;&amp; arr[min][j] &lt; INT_MAX &amp;&amp; (d[min] + arr[min][j]) &lt; d[j])</span><br><span class="line">            &#123;</span><br><span class="line">                d[j] &#x3D; d[min] + arr[min][j];</span><br><span class="line">                pre[j].clear();</span><br><span class="line">                pre[j].push_back(min);</span><br><span class="line">            &#125;</span><br><span class="line">            else if (!S[j] &amp;&amp; arr[min][j] &lt; INT_MAX &amp;&amp; (d[min] + arr[min][j]) &#x3D;&#x3D; d[j])</span><br><span class="line">            &#123;</span><br><span class="line">                pre[j].push_back(min);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    dfs(s);</span><br><span class="line">    cout &lt;&lt; needMin &lt;&lt; &quot; &quot;;</span><br><span class="line">    for (int i &#x3D; path.size() - 1; i &gt;&#x3D; 0; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        if (i !&#x3D; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; path[i] &lt;&lt; &quot;-&gt;&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; path[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot; &quot; &lt;&lt; backMin;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -211,23 +235,24 @@
 <p>其中，dj算法求路径时，若存在两条最短路径时，会将其存在pre[]容器中，pre是二维数组，pre[i]表示i节点的前驱节点。</p>
 <p>在求处路径后，通过dfs遍历一遍，求出共享单车发出或者收回的数量。</p>
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+                    <div class="clearfix"></div>
+                    <hr class="nogutter">
+            </div>
+            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     <a class="pull-left" href="/2021/05/29/pta%20%E7%94%B2%E7%BA%A7%201072/" style="float: left;">
         ← 
     </a>
     
     
-    <a class="pull-right" href="/2021/05/20/c++%20fill()%E5%87%BD%E6%95%B0/">
+    <a class="pull-right" href="/2021/05/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%9A/">
          →
     </a>
     
 </nav>
 
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+                <div class="col-md-8 col-md-offset-2 col-sm-24">
+                    <script type="text/javascript">
   /**
    * 搜狐畅言
    */
@@ -276,10 +301,10 @@
   */
 
 </script>
-</div>
-    </div>
-</section>
 
+                </div>
+        </div>
+    </section>
 
       
 <!-- ============================ Footer =========================== -->
@@ -295,7 +320,7 @@
             <div class="social">
                 <ul>
                     
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
                     
                     
                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>

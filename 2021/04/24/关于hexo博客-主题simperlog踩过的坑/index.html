@@ -80,14 +80,8 @@
                 <ul class="sb-submenu">
                     
                         <li>
-                            <a href="/" target="_BLANK" class="animsition-link">
-                                AAA
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="/atom.xml" target="_BLANK" class="animsition-link">
-                                BBB
+                            <a href="https://timemail.net/" target="_BLANK" class="animsition-link">
+                                时光邮局
                             </a>
                         </li>
                         
@@ -95,26 +89,56 @@
             </li>
             
                 
+                    <li>
+                        <a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+                        <ul class="sb-submenu">
+                            
+                                <li>
+                                    <a href="/categories/编程/" class="animsition-link">
+                                        编程<small>(2)</small></a>
+                                </li>
+                                
+                        </ul>
+                    </li>
+                    
                         
                             <li>
-                                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                <a class="sb-toggle-submenu">Tags<span class="sb-caret"></span></a>
                                 <ul class="sb-submenu">
                                     
                                         <li>
-                                            <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
-                                                Kieran
-                                            </a>
+                                            <a href="/tags/C-C/" class="animsition-link">
+                                                C/C++<small>(1)</small></a>
                                         </li>
                                         
                                         <li>
-                                            <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
-                                                Name
-                                            </a>
+                                            <a href="/tags/hexo/" class="animsition-link">
+                                                hexo<small>(1)</small></a>
                                         </li>
                                         
                                 </ul>
                             </li>
                             
+                                
+                                    <li>
+                                        <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                        <ul class="sb-submenu">
+                                            
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
+                                                        Kieran
+                                                    </a>
+                                                </li>
+                                                
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
+                                                        Name
+                                                    </a>
+                                                </li>
+                                                
+                                        </ul>
+                                    </li>
+                                    
     </ul>
     <!-- Lists in Slidebars -->
     <ul class="sb-menu secondary">
@@ -156,7 +180,7 @@
                         </li>
                         <li class="nolink"><span>Always </span>Creative.</li>
                         
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a></li>
                             
                                 
                                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
@@ -189,26 +213,31 @@
 
     <!-- ============================ Header & Logo bar =========================== -->
       
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
+    <section id="intro">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <span class="post-meta">
       <time datetime="2021-04-24T05:49:17.000Z" itemprop="datePublished">
           2021-04-24
       </time>
     
+    
+    | 
+    <a href='/tags/hexo/'>hexo</a>
+    
+    
 </span>
-                <h1>关于hexo博客 主题simperlog踩过的坑</h1>
+                    <h1>
+                        关于hexo博客 主题simperlog踩过的坑
+                    </h1>
             </div>
-        </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<p><img src="https://gitee.com/changa-code/blog-images/raw/master/image-20210424135826060.png" alt="image-20210424135826060"></p>
+            <div class="col-md-8 col-md-offset-2">
+                <p><img src="https://gitee.com/changa-code/blog-images/raw/master/image-20210424135826060.png" alt="image-20210424135826060"></p>
 <p>在搭建博客选主题时，由于个人喜好简单的风格，一下便选中了simperlog，但配置后发下部分功能不能正常使用，出现了以下几个问题：</p>
 <h2 id="出现问题1："><a href="#出现问题1：" class="headerlink" title="出现问题1："></a>出现问题1：</h2><p>点击文章链接跳转到了 Example Domain页面，而不是跳转至文章页面。</p>
 <p><img src="https://gitee.com/changa-code/blog-images/raw/master/289aa418-3843-444e-8612-d06587000313.png" alt="img"></p>
-<p>由于我更换其他主题能够正常跳转至文章页面，因此我觉得应该是跳转的路径问题。</p>
-<p>于是，我就查看了其他主题的跳转方法，仿照了一下，结果真成功了。</p>
+<p>由于我更换其他主题能够正常跳转至文章页面，所以我觉得应该是跳转的路径问题。</p>
+<p>于是我就查了其他主题的跳转方法，仿照了一下，结果真成功了。</p>
 <h2 id="更改如下："><a href="#更改如下：" class="headerlink" title="更改如下："></a>更改如下：</h2><p>原本标签地址如图：</p>
 <p><img src="https://gitee.com/changa-code/blog-images/raw/master/ac2405f4-b607-4c91-810b-078be0dea72c.png" alt="img"></p>
 <p>将a标签处的地址改为  href=“&lt;%= post.permalink %&gt;”</p>
@@ -224,13 +253,13 @@
 <p>打开博客目录下的source文件夹，在这里会出现一个about文件夹，打开有index.md，可以更改显示内容。</p>
 <p><img src="https://gitee.com/changa-code/blog-images/raw/master/00a6ed60-d098-46c1-97bb-c298d7d706f6.png" alt="img"></p>
 <p>这样就可以使用啦。</p>
-<p>附上解决问题的作者的一句忠告：</p>
+<p>附上原作者的一句忠告：</p>
 <p>  <strong>总结：一定要看官方文档，一定要看官方文档，一定要看官方文档，重要的事情要说三遍。</strong></p>
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+                    <div class="clearfix"></div>
+                    <hr class="nogutter">
+            </div>
+            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     <a class="pull-left" href="/2021/04/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C/" style="float: left;">
         ← 
@@ -243,7 +272,8 @@
     
 </nav>
 
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+                <div class="col-md-8 col-md-offset-2 col-sm-24">
+                    <script type="text/javascript">
   /**
    * 搜狐畅言
    */
@@ -292,10 +322,10 @@
   */
 
 </script>
-</div>
-    </div>
-</section>
 
+                </div>
+        </div>
+    </section>
 
       
 <!-- ============================ Footer =========================== -->
@@ -311,7 +341,7 @@
             <div class="social">
                 <ul>
                     
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
                     
                     
                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>

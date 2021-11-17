@@ -80,14 +80,8 @@
                 <ul class="sb-submenu">
                     
                         <li>
-                            <a href="/" target="_BLANK" class="animsition-link">
-                                AAA
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="/atom.xml" target="_BLANK" class="animsition-link">
-                                BBB
+                            <a href="https://timemail.net/" target="_BLANK" class="animsition-link">
+                                时光邮局
                             </a>
                         </li>
                         
@@ -95,26 +89,56 @@
             </li>
             
                 
+                    <li>
+                        <a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+                        <ul class="sb-submenu">
+                            
+                                <li>
+                                    <a href="/categories/编程/" class="animsition-link">
+                                        编程<small>(2)</small></a>
+                                </li>
+                                
+                        </ul>
+                    </li>
+                    
                         
                             <li>
-                                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                <a class="sb-toggle-submenu">Tags<span class="sb-caret"></span></a>
                                 <ul class="sb-submenu">
                                     
                                         <li>
-                                            <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
-                                                Kieran
-                                            </a>
+                                            <a href="/tags/C-C/" class="animsition-link">
+                                                C/C++<small>(1)</small></a>
                                         </li>
                                         
                                         <li>
-                                            <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
-                                                Name
-                                            </a>
+                                            <a href="/tags/hexo/" class="animsition-link">
+                                                hexo<small>(1)</small></a>
                                         </li>
                                         
                                 </ul>
                             </li>
                             
+                                
+                                    <li>
+                                        <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                        <ul class="sb-submenu">
+                                            
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
+                                                        Kieran
+                                                    </a>
+                                                </li>
+                                                
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
+                                                        Name
+                                                    </a>
+                                                </li>
+                                                
+                                        </ul>
+                                    </li>
+                                    
     </ul>
     <!-- Lists in Slidebars -->
     <ul class="sb-menu secondary">
@@ -156,7 +180,7 @@
                         </li>
                         <li class="nolink"><span>Always </span>Creative.</li>
                         
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a></li>
                             
                                 
                                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
@@ -189,21 +213,21 @@
 
     <!-- ============================ Header & Logo bar =========================== -->
       
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
+    <section id="intro">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <span class="post-meta">
       <time datetime="2021-06-08T13:20:54.022Z" itemprop="datePublished">
           2021-06-08
       </time>
     
 </span>
-                <h1></h1>
+                    <h1>
+                        
+                    </h1>
             </div>
-        </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h1 id="C-STL-unordered-map"><a href="#C-STL-unordered-map" class="headerlink" title="C++STL: unordered_map"></a>C++STL: unordered_map</h1><h2 id="1-unordered-map"><a href="#1-unordered-map" class="headerlink" title="1.unordered_map"></a>1.unordered_map</h2><ul>
+            <div class="col-md-8 col-md-offset-2">
+                <h1 id="C-STL-unordered-map"><a href="#C-STL-unordered-map" class="headerlink" title="C++STL: unordered_map"></a>C++STL: unordered_map</h1><h2 id="1-unordered-map"><a href="#1-unordered-map" class="headerlink" title="1.unordered_map"></a>1.unordered_map</h2><ul>
 <li>定义：unordered_map是一种哈希表</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unorder_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">unordered_map&lt;type1,typ2&gt; mymap;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入：</span></span><br><span class="line">map.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(nums[i],i));</span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line">map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line"><span class="keyword">for</span> (it = mp.<span class="built_in">begin</span>(); it != mp.<span class="built_in">end</span>(); it++)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d--&gt;%d\n&quot;</span>, it-&gt;first, it-&gt;second);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -251,10 +275,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">assign() 给list赋值 </span><br><span class="line">front() 返回第一个元素 </span><br><span class="line">back() 返回最后一个元素 </span><br><span class="line">begin() 返回指向第一个元素的迭代器 </span><br><span class="line">clear() 删除所有元素 </span><br><span class="line">empty() 如果list是空的则返回true </span><br><span class="line">end() 返回末尾的迭代器 </span><br><span class="line">erase() 删除一个元素 </span><br><span class="line">get_allocator() 返回list的配置器 </span><br><span class="line">insert() 在指定位置插入一个元素 </span><br><span class="line">emplace()	同insert函数一样，但效率更高	   &#x2F;&#x2F;重要</span><br><span class="line">max_size() 返回list能容纳的最大元素数量 </span><br><span class="line">merge() 合并两个list </span><br><span class="line">pop_back() 删除最后一个元素 </span><br><span class="line">pop_front() 删除第一个元素 </span><br><span class="line">push_back() 在list的末尾添加一个元素 </span><br><span class="line">push_front() 在list的头部添加一个元素 		&#x2F;&#x2F;重要</span><br><span class="line">rbegin() 返回指向第一个元素的逆向迭代器 </span><br><span class="line">remove() 从list删除元素 </span><br><span class="line">remove_if() 按指定条件删除元素 </span><br><span class="line">rend() 指向list末尾的逆向迭代器 </span><br><span class="line">resize() 改变list的大小 </span><br><span class="line">reverse() 把list的元素倒转 </span><br><span class="line">size() 返回list中的元素个数 </span><br><span class="line">sort() 给list排序 </span><br><span class="line">splice() 合并两个list </span><br><span class="line">swap() 交换两个list </span><br><span class="line">unique() 删除list中重复的元素</span><br></pre></td></tr></table></figure>
 
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+                    <div class="clearfix"></div>
+                    <hr class="nogutter">
+            </div>
+            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     <a class="pull-left" href="/2021/06/09/%E5%9B%A0%E7%89%B9%E7%BD%91%E4%B8%AD%E7%9A%84%E9%80%89%E8%B7%AFRIP%E5%92%8COSPF%E5%8D%8F%E8%AE%AE/" style="float: left;">
         ← 
@@ -267,7 +291,8 @@
     
 </nav>
 
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+                <div class="col-md-8 col-md-offset-2 col-sm-24">
+                    <script type="text/javascript">
   /**
    * 搜狐畅言
    */
@@ -316,10 +341,10 @@
   */
 
 </script>
-</div>
-    </div>
-</section>
 
+                </div>
+        </div>
+    </section>
 
       
 <!-- ============================ Footer =========================== -->
@@ -335,7 +360,7 @@
             <div class="social">
                 <ul>
                     
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
                     
                     
                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
