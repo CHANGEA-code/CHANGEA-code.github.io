@@ -95,7 +95,7 @@
                             
                                 <li>
                                     <a href="/categories/编程/" class="animsition-link">
-                                        编程<small>(2)</small></a>
+                                        编程<small>(1)</small></a>
                                 </li>
                                 
                         </ul>
@@ -107,13 +107,8 @@
                                 <ul class="sb-submenu">
                                     
                                         <li>
-                                            <a href="/tags/C-C/" class="animsition-link">
-                                                C/C++<small>(1)</small></a>
-                                        </li>
-                                        
-                                        <li>
-                                            <a href="/tags/hexo/" class="animsition-link">
-                                                hexo<small>(1)</small></a>
+                                            <a href="/tags/算法与数据结构/" class="animsition-link">
+                                                算法与数据结构<small>(1)</small></a>
                                         </li>
                                         
                                 </ul>
@@ -258,15 +253,20 @@
                 <div class="col-md-8 col-md-offset-2 opening-statement">
                     <div class="col-md-4">
                         <h3>
-                            <a href="/2021/09/05/二叉堆/">
-                                
+                            <a href="/2021/11/23/二叉树专题一/">
+                                【算法与数据结构】二叉树专题一
                             </a>
                         </h3>
                         <span>
                         <span class="post-meta">
-      <time datetime="2021-09-05T02:40:48.183Z" itemprop="datePublished">
-          2021-09-05
+      <time datetime="2021-11-23T04:01:02.000Z" itemprop="datePublished">
+          2021-11-23
       </time>
+    
+    
+    | 
+    <a href='/tags/算法与数据结构/'>算法与数据结构</a>
+    
     
 </span>
                     </span>
@@ -274,17 +274,18 @@
                     <div class="col-md-8">
                         <p>
                             
-                                        二叉堆1.C++表示12priority_queue&lt;int&gt; pq;//最大堆优先队列，默认priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt;&gt; pq;//最小堆优先队列
-
-2.常用方法123push(val); //插入pop(); //删除pq.size();	//堆的大小
-
-3.优先级队列原理
-原理：优先级队列插入，删除元素都会将数组自动排序好。
+                                        判断一棵树是否为搜索二叉树？1.什么是搜索二叉树？
+搜索二叉树：每个节点比它的左孩子节点值小，比右孩子节点值大。
+2.思路：
+中序遍历，判断遍历到的节点值是否一直是升序的。若是，则返回true；否则返回false。
+3.对应力扣题：98. 验证二叉搜索树 - 力扣（LeetCode） (leetcode-cn.com)
+题解：
+12345678910111213141516class Solution &#123;public:    
                                             
                         </p>
                         
                             <p class="pull-right readMore">
-                                <a href="/2021/09/05/二叉堆/">
+                                <a href="/2021/11/23/二叉树专题一/">
                                     Read More...</a>
                             </p>
                             
@@ -298,14 +299,14 @@
                 <div class="col-md-8 col-md-offset-2 opening-statement">
                     <div class="col-md-4">
                         <h3>
-                            <a href="/2021/08/20/labuladong的算法小抄/">
-                                
+                            <a href="/2021/04/24/git的使用/">
+                                git的使用
                             </a>
                         </h3>
                         <span>
                         <span class="post-meta">
-      <time datetime="2021-08-20T02:44:55.556Z" itemprop="datePublished">
-          2021-08-20
+      <time datetime="2021-04-24T02:44:20.000Z" itemprop="datePublished">
+          2021-04-24
       </time>
     
 </span>
@@ -314,450 +315,22 @@
                     <div class="col-md-8">
                         <p>
                             
-                                        labuladong的算法小抄1.二分查找：
-模板：
+                                        1.克隆github/gitee上的项目：1.创建一个文件夹2.在这个文件夹打开git客户端3.输入 git init,生成一个.git文件，你就可以靠这个文件管理这个文件夹
 
-int binary_search(int[] nums, int target) &#123;
-    int left = 0, right = nums.length - 1; 
-    while(left &lt;= right) &#123;
-        int mid = left + (right - left) / 2;
-        if (nums[mi
+4.输入git clone +仓库地址    
+
+成功：
+
+2.上传项目或者修改到github：1)、git init 初始化仓库，将这个目录变成git可以管理的仓库（上传修改的话就不用这步了）
+
+然后将需要上传的文件复制过来
+
+2)、 然后使用git add 
                                             
                         </p>
                         
                             <p class="pull-right readMore">
-                                <a href="/2021/08/20/labuladong的算法小抄/">
-                                    Read More...</a>
-                            </p>
-                            
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 opening-statement">
-                    <div class="col-md-4">
-                        <h3>
-                            <a href="/2021/08/08/Java图形化界面/">
-                                
-                            </a>
-                        </h3>
-                        <span>
-                        <span class="post-meta">
-      <time datetime="2021-08-07T16:08:39.035Z" itemprop="datePublished">
-          2021-08-08
-      </time>
-    
-</span>
-                    </span>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            
-                                        Java图形化界面简单的窗体方法：
-setBounds(x,y,width,height)方法：可实现一步调整组件，是setLocation(x,y)和setSize(width,height)的结合。
-resizable属性：
-isResizable()：获取resizable值
- setResizable(boolean resizable)：设置窗体是否允许用户改变窗体的大小
-
-
-
-教训：
-设置图标：
-
-Image img = n
-                                            
-                        </p>
-                        
-                            <p class="pull-right readMore">
-                                <a href="/2021/08/08/Java图形化界面/">
-                                    Read More...</a>
-                            </p>
-                            
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 opening-statement">
-                    <div class="col-md-4">
-                        <h3>
-                            <a href="/2021/07/29/IDEA javaweb遇到的问题：/">
-                                
-                            </a>
-                        </h3>
-                        <span>
-                        <span class="post-meta">
-      <time datetime="2021-07-29T13:21:10.413Z" itemprop="datePublished">
-          2021-07-29
-      </time>
-    
-</span>
-                    </span>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            
-                                        IDEA javaweb遇到的问题：1.HTTP状态码500，内部服务器错误
-编写了Servlet类，并通过web.xml映射到服务器中，打开tomcat服务器总是访问不到该Servlet类。
-
-
-
-原因：对Librariesli和Artifacts的配置不够了解，导致出现错误。
-
-首先，了解一下Libraries，它翻译为函数库。你添加进它里面的jar包可以组织成一个个包，如图中的bookcity。如何添加：打开项目project s
-                                            
-                        </p>
-                        
-                            <p class="pull-right readMore">
-                                <a href="/2021/07/29/IDEA javaweb遇到的问题：/">
-                                    Read More...</a>
-                            </p>
-                            
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 opening-statement">
-                    <div class="col-md-4">
-                        <h3>
-                            <a href="/2021/07/29/数据结构：二叉树专题/">
-                                
-                            </a>
-                        </h3>
-                        <span>
-                        <span class="post-meta">
-      <time datetime="2021-07-29T00:26:16.987Z" itemprop="datePublished">
-          2021-07-29
-      </time>
-    
-</span>
-                    </span>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            
-                                        数据结构：二叉树专题1.生成二叉树：根据中序和后序遍历生成二叉树：根据中序和前序遍历生成二叉树：
-二者的解法十分相似。都是先根据后序或者前序遍历得到根节点，再根据中序遍历将二叉树分为左右子树。接着递归遍历左右子树，知道子节点为空。
-
-力扣题解：https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/soluti
-                                            
-                        </p>
-                        
-                            <p class="pull-right readMore">
-                                <a href="/2021/07/29/数据结构：二叉树专题/">
-                                    Read More...</a>
-                            </p>
-                            
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 opening-statement">
-                    <div class="col-md-4">
-                        <h3>
-                            <a href="/2021/07/26/在IDEA中打开Maven新建一个javaweb项目/">
-                                
-                            </a>
-                        </h3>
-                        <span>
-                        <span class="post-meta">
-      <time datetime="2021-07-26T07:40:33.203Z" itemprop="datePublished">
-          2021-07-26
-      </time>
-    
-</span>
-                    </span>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            
-                                        在IDEA中打开Maven新建一个javaweb项目注意1.Maven文件夹中conf下的settings.xml文件配置1）添加仓库路径：
-1&lt;localRepository&gt;D:\APP\apache-maven-3.6.1\maven_repo&lt;&#x2F;localRepository&gt;
-
-
-
-2）设置阿里镜像：
-123456&lt;mirror&gt;		&lt;id&gt;aliyunmaven&lt
-                                            
-                        </p>
-                        
-                            <p class="pull-right readMore">
-                                <a href="/2021/07/26/在IDEA中打开Maven新建一个javaweb项目/">
-                                    Read More...</a>
-                            </p>
-                            
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 opening-statement">
-                    <div class="col-md-4">
-                        <h3>
-                            <a href="/2021/07/12/Java笔记/">
-                                
-                            </a>
-                        </h3>
-                        <span>
-                        <span class="post-meta">
-      <time datetime="2021-07-12T03:20:25.675Z" itemprop="datePublished">
-          2021-07-12
-      </time>
-    
-</span>
-                    </span>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            
-                                        Java笔记一.语言基础1.一旦创建了 String 对象，那它的值就无法改变了理解：值无法改变指的是一开始String指向的内存空间的值不再改变。
-若更改String的值的话，它会重新创建一块空间，舍弃原来的空间。
-
-要想对字符串修改的话，需要用StringBuffer 和 StringBuilder 类。
-
-2.StringBuffer和StringBuilder：
-由于 StringBuilder 相较于 StringBuffer
-                                            
-                        </p>
-                        
-                            <p class="pull-right readMore">
-                                <a href="/2021/07/12/Java笔记/">
-                                    Read More...</a>
-                            </p>
-                            
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 opening-statement">
-                    <div class="col-md-4">
-                        <h3>
-                            <a href="/2021/06/30/《linux鸟哥私饭菜》笔记/">
-                                
-                            </a>
-                        </h3>
-                        <span>
-                        <span class="post-meta">
-      <time datetime="2021-06-30T08:19:15.350Z" itemprop="datePublished">
-          2021-06-30
-      </time>
-    
-</span>
-                    </span>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            
-                                        《linux鸟哥私饭菜》笔记第五章 linux的文件权限与目录配置1.目录的介绍：
-
-/usr目录不是用户user的意识，是unix software resource的缩写。功能类似于存放软件文件，数据的地方，如window下的“C:\Window(其中的一部分) + C:\program files\”  
-
-/var目录：主要针队经常性变动的文件，包括缓存，日志文件，以及某些软件运行时产生的文件。
-
-/tmp目录：这是让一般用户或
-                                            
-                        </p>
-                        
-                            <p class="pull-right readMore">
-                                <a href="/2021/06/30/《linux鸟哥私饭菜》笔记/">
-                                    Read More...</a>
-                            </p>
-                            
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 opening-statement">
-                    <div class="col-md-4">
-                        <h3>
-                            <a href="/2021/06/25/计组笔记/">
-                                
-                            </a>
-                        </h3>
-                        <span>
-                        <span class="post-meta">
-      <time datetime="2021-06-25T05:57:14.893Z" itemprop="datePublished">
-          2021-06-25
-      </time>
-    
-</span>
-                    </span>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            
-                                        计组笔记为什么8位的有符号二进制数表示的范围是-128~127？
-原因就在于计算机中存储数据是以补码的方式存储的，原因在于，使用补码，可以将符号位和数值域统一处理；同时，加法和减法也可以统一处理，用加法来替代减法。
-
-其次，补码的0没有正负之分，于是，0000 0000 表示为0，但1000 0000表示为什么呢？答案就是为-128。
-
-
-
-
-上图的补码推导最后发下 补码1000 0000可以表示为-128，那它的原码是什么？通过  符
-                                            
-                        </p>
-                        
-                            <p class="pull-right readMore">
-                                <a href="/2021/06/25/计组笔记/">
-                                    Read More...</a>
-                            </p>
-                            
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 opening-statement">
-                    <div class="col-md-4">
-                        <h3>
-                            <a href="/2021/06/17/mysql学习笔记/">
-                                
-                            </a>
-                        </h3>
-                        <span>
-                        <span class="post-meta">
-      <time datetime="2021-06-17T06:01:59.059Z" itemprop="datePublished">
-          2021-06-17
-      </time>
-    
-</span>
-                    </span>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            
-                                        mysql学习笔记软件下载：1.如何将mysql卸载干净？
-
-2.dos命令行登录mysql
-12mysql [-h 主机号 -P端口号]-u root -p若为本机，则可省略主机号和端口号。
-
-退出mysql：
-1exit
-
-3.mysql常用命令：
-123456show databases;	&#x2F;&#x2F;输出所有的数据库名称use test;	&#x2F;&#x2F;使用数据库testshow tables;	&#x2F
-                                            
-                        </p>
-                        
-                            <p class="pull-right readMore">
-                                <a href="/2021/06/17/mysql学习笔记/">
-                                    Read More...</a>
-                            </p>
-                            
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 opening-statement">
-                    <div class="col-md-4">
-                        <h3>
-                            <a href="/2021/06/16/数据结构：队列和栈专题/">
-                                
-                            </a>
-                        </h3>
-                        <span>
-                        <span class="post-meta">
-      <time datetime="2021-06-16T02:08:48.787Z" itemprop="datePublished">
-          2021-06-16
-      </time>
-    
-</span>
-                    </span>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            
-                                        数据结构：队列和栈专题1.循环队列的实现：
-思路：
-
-初始时，头指针和位置针head，tail置于-1处。入队列时，若队列为空，则要多加head=0的操作，其余情况都是tail = （tail+1）%size再赋值。出队时，若head==tail，要将操作改为head = tail = -1.
-
-代码：
-
-123456789101112131415161718192021222324252627282930313233343536373
-                                            
-                        </p>
-                        
-                            <p class="pull-right readMore">
-                                <a href="/2021/06/16/数据结构：队列和栈专题/">
-                                    Read More...</a>
-                            </p>
-                            
-                    </div>
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 opening-statement">
-                    <div class="col-md-4">
-                        <h3>
-                            <a href="/2021/06/15/《现代操作系统》笔记/">
-                                
-                            </a>
-                        </h3>
-                        <span>
-                        <span class="post-meta">
-      <time datetime="2021-06-15T03:48:34.919Z" itemprop="datePublished">
-          2021-06-15
-      </time>
-    
-</span>
-                    </span>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            
-                                        《现代操作系统》笔记第二章 进程和线程1.进程的创建：
-主要有4中情况：
-
-系统的初始化，
-执行了正在运行的进程所调用的进程创建系统调用，
-用户请求创建一个新进程，
-一个批处理作业的初始化。
-
-UNIX调用fork，window调用createProcess
-
-2.进程的终止：
-有4种情况：
-
-正常退出（自愿）
-出错退出（自愿）
-严重错误（非自愿）
-被其他进程杀死（非自愿）
-
-UNIX调用exit,kill,window调用ExitPr
-                                            
-                        </p>
-                        
-                            <p class="pull-right readMore">
-                                <a href="/2021/06/15/《现代操作系统》笔记/">
+                                <a href="/2021/04/24/git的使用/">
                                     Read More...</a>
                             </p>
                             
@@ -769,8 +342,7 @@ UNIX调用exit,kill,window调用ExitPr
             
                 <nav class="pagination" role="pagination">
                     
-                            <a class="pull-right" href="/page/2/">Older Posts →</a>
-                                
+                            
                 </nav>
     </div>
 </section>

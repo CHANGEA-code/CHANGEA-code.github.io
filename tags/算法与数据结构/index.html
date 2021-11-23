@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>CHANGEA&#39;S BLOG</title>
+  <title>Tag: 算法与数据结构 | CHANGEA&#39;S BLOG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -95,7 +95,7 @@
                             
                                 <li>
                                     <a href="/categories/编程/" class="animsition-link">
-                                        编程<small>(2)</small></a>
+                                        编程<small>(1)</small></a>
                                 </li>
                                 
                         </ul>
@@ -107,13 +107,8 @@
                                 <ul class="sb-submenu">
                                     
                                         <li>
-                                            <a href="/tags/C-C/" class="animsition-link">
-                                                C/C++<small>(1)</small></a>
-                                        </li>
-                                        
-                                        <li>
-                                            <a href="/tags/hexo/" class="animsition-link">
-                                                hexo<small>(1)</small></a>
+                                            <a href="/tags/算法与数据结构/" class="animsition-link">
+                                                算法与数据结构<small>(1)</small></a>
                                         </li>
                                         
                                 </ul>
@@ -212,103 +207,69 @@
     </div>
 
     <!-- ============================ Header & Logo bar =========================== -->
-      
-    <section id="intro">
-        <div class="container">
-            <div class="col-md-8 col-md-offset-2">
-                <span class="post-meta">
-      <time datetime="2021-06-25T05:57:14.893Z" itemprop="datePublished">
-          2021-06-25
-      </time>
-    
-</span>
-                    <h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
                         
-                    </h1>
-            </div>
-            <div class="col-md-8 col-md-offset-2">
-                <h1 id="计组笔记"><a href="#计组笔记" class="headerlink" title="计组笔记"></a>计组笔记</h1><h2 id="为什么8位的有符号二进制数表示的范围是-128-127？"><a href="#为什么8位的有符号二进制数表示的范围是-128-127？" class="headerlink" title="为什么8位的有符号二进制数表示的范围是-128~127？"></a>为什么8位的有符号二进制数表示的范围是-128~127？</h2><ul>
-<li><p>原因就在于计算机中存储数据是以<strong>补码</strong>的方式存储的，原因在于，使用补码，可以将符号位和数值域统一处理；同时，加法和减法也可以统一处理，用加法来替代减法。</p>
-</li>
-<li><p>其次，补码的0没有正负之分，于是，0000 0000 表示为0，但1000 0000表示为什么呢？答案就是为-128。</p>
-</li>
-</ul>
-<p><img src="C:\Users\86150\AppData\Roaming\Typora\typora-user-images\image-20210625135352296.png" alt="image-20210625135352296"></p>
-<ul>
-<li>上图的补码推导最后发下 补码1000 0000可以表示为-128，那它的原码是什么？通过  符号位之外的位取反+1  得到 1 1000 0000，溢出的自动丢失，得到1000 0000，这不就是-0，由于0没有正负之分，于是就用这个1000 0000就表示为-128。</li>
-</ul>
+                        <h2></h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p></p>
+                        
 
-                    <div class="clearfix"></div>
-                    <hr class="nogutter">
-            </div>
-            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
-    
-    <a class="pull-left" href="/2021/06/30/%E3%80%8Alinux%E9%B8%9F%E5%93%A5%E7%A7%81%E9%A5%AD%E8%8F%9C%E3%80%8B%E7%AC%94%E8%AE%B0/" style="float: left;">
-        ← 
-    </a>
-    
-    
-    <a class="pull-right" href="/2021/06/17/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-         →
-    </a>
-    
-</nav>
-
-                <div class="col-md-8 col-md-offset-2 col-sm-24">
-                    <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
-
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
-</script>
-
+                    </div>
                 </div>
+            </div>
+            <!-- // .col-md-12 -->
         </div>
-    </section>
+        <div class="herofade beige-dk"></div>
+    </div>
+</section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
+
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2021/11/23/二叉树专题一/">【算法与数据结构】二叉树专题一</a></h4>
+                            
+                            <p><time datetime="2021-11-23T04:01:02.000Z"><a href="/2021/11/23/二叉树专题一/">2021-11-23</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 

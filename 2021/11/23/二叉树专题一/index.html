@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>关于hexo博客 主题simperlog踩过的坑 | CHANGEA&#39;S BLOG</title>
+  <title>【算法与数据结构】二叉树专题一 | CHANGEA&#39;S BLOG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -95,7 +95,7 @@
                             
                                 <li>
                                     <a href="/categories/编程/" class="animsition-link">
-                                        编程<small>(2)</small></a>
+                                        编程<small>(1)</small></a>
                                 </li>
                                 
                         </ul>
@@ -107,13 +107,8 @@
                                 <ul class="sb-submenu">
                                     
                                         <li>
-                                            <a href="/tags/C-C/" class="animsition-link">
-                                                C/C++<small>(1)</small></a>
-                                        </li>
-                                        
-                                        <li>
-                                            <a href="/tags/hexo/" class="animsition-link">
-                                                hexo<small>(1)</small></a>
+                                            <a href="/tags/算法与数据结构/" class="animsition-link">
+                                                算法与数据结构<small>(1)</small></a>
                                         </li>
                                         
                                 </ul>
@@ -217,53 +212,69 @@
         <div class="container">
             <div class="col-md-8 col-md-offset-2">
                 <span class="post-meta">
-      <time datetime="2021-04-24T05:49:17.000Z" itemprop="datePublished">
-          2021-04-24
+      <time datetime="2021-11-23T04:01:02.000Z" itemprop="datePublished">
+          2021-11-23
       </time>
     
     
     | 
-    <a href='/tags/hexo/'>hexo</a>
+    <a href='/tags/算法与数据结构/'>算法与数据结构</a>
     
     
 </span>
                     <h1>
-                        关于hexo博客 主题simperlog踩过的坑
+                        【算法与数据结构】二叉树专题一
                     </h1>
             </div>
             <div class="col-md-8 col-md-offset-2">
-                <p><img src="https://gitee.com/changa-code/blog-images/raw/master/image-20210424135826060.png" alt="image-20210424135826060"></p>
-<p>在搭建博客选主题时，由于个人喜好简单的风格，一下便选中了simperlog，但配置后发下部分功能不能正常使用，出现了以下几个问题：</p>
-<h2 id="出现问题1："><a href="#出现问题1：" class="headerlink" title="出现问题1："></a>出现问题1：</h2><p>点击文章链接跳转到了 Example Domain页面，而不是跳转至文章页面。</p>
-<p><img src="https://gitee.com/changa-code/blog-images/raw/master/289aa418-3843-444e-8612-d06587000313.png" alt="img"></p>
-<p>由于我更换其他主题能够正常跳转至文章页面，所以我觉得应该是跳转的路径问题。</p>
-<p>于是我就查了其他主题的跳转方法，仿照了一下，结果真成功了。</p>
-<h2 id="更改如下："><a href="#更改如下：" class="headerlink" title="更改如下："></a>更改如下：</h2><p>原本标签地址如图：</p>
-<p><img src="https://gitee.com/changa-code/blog-images/raw/master/ac2405f4-b607-4c91-810b-078be0dea72c.png" alt="img"></p>
-<p>将a标签处的地址改为  href=“&lt;%= post.permalink %&gt;”</p>
-<p>如下：</p>
-<p><img src="https://gitee.com/changa-code/blog-images/raw/master/129d8891-9a0d-4800-ac39-32e8dff43181.png" alt="img"></p>
-<p>并在 article.ejs 文件中添加&lt;% permalink = config.url + config.root + post.path %&gt;</p>
-<p>以下内容即可：</p>
-<p><img src="https://gitee.com/changa-code/blog-images/raw/master/a6f3209e-2845-415f-9005-0072b9f7c182.png" alt="img"></p>
-<h2 id="出现问题2："><a href="#出现问题2：" class="headerlink" title="出现问题2："></a>出现问题2：</h2><p>点击右上角的 关于 ，会出现“Cannot GET/about”的错误，无法跳转到about页面</p>
-<p><img src="https://gitee.com/changa-code/blog-images/raw/master/271c77f0-ccee-48cd-acff-c7b94a5ff4a5.jpg" alt="img"></p>
-<p>上网查了之后，发现原来是<strong>没有初始化目录</strong>。由于我的路径是导到了about.ejs文件，所以我要初始化一下about目录。</p>
-<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><p>在git控制台输入，如：hexo new page “about”，初始化分类目录。</p>
-<p>打开博客目录下的source文件夹，在这里会出现一个about文件夹，打开有index.md，可以更改显示内容。</p>
-<p><img src="https://gitee.com/changa-code/blog-images/raw/master/00a6ed60-d098-46c1-97bb-c298d7d706f6.png" alt="img"></p>
-<p>这样就可以使用啦。</p>
-<p>附上原作者的一句忠告：</p>
-<p>  <strong>总结：一定要看官方文档，一定要看官方文档，一定要看官方文档，重要的事情要说三遍。</strong></p>
+                <h2 id="判断一棵树是否为搜索二叉树？"><a href="#判断一棵树是否为搜索二叉树？" class="headerlink" title="判断一棵树是否为搜索二叉树？"></a>判断一棵树是否为搜索二叉树？</h2><p>1.什么是搜索二叉树？</p>
+<p>搜索二叉树：每个节点比它的左孩子节点值小，比右孩子节点值大。</p>
+<p>2.思路：</p>
+<p>中序遍历，判断遍历到的节点值是否一直是升序的。若是，则返回true；否则返回false。</p>
+<p>3.对应力扣题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/validate-binary-search-tree/">98. 验证二叉搜索树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p>题解：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">long</span> preVal = LONG_MIN;             <span class="comment">//全局变量，保存前一节点的值。由于题目的数据范围最小为INT_MIN，因此要设为LONG_MIN</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">bool</span> left = <span class="built_in">isValidBST</span>(root-&gt;left);</span><br><span class="line">        <span class="keyword">if</span>(!left)                       <span class="comment">//若左子节树不符合，直接退出</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;val&lt;=preVal)           <span class="comment">//若节点值不是升序，直接退出</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            preVal = root-&gt;val;         <span class="comment">//更新前一节点的值preVal</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">isValidBST</span>(root-&gt;right); <span class="comment">//直接返回右子树的结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>（模板解法）Java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ResultType3</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> min;</span><br><span class="line">    <span class="keyword">int</span> max;</span><br><span class="line">    <span class="keyword">boolean</span> isBST;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ResultType3</span><span class="params">(<span class="keyword">int</span> min,<span class="keyword">int</span> max,<span class="keyword">boolean</span> isBST)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.min = min;</span><br><span class="line">        <span class="keyword">this</span>.max = max;</span><br><span class="line">        <span class="keyword">this</span>.isBST = isBST;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isBST</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> process3(node).isBST;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> ResultType3 <span class="title">process3</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;    <span class="comment">//这里若不知道返回值设为什么，则返回null。但后边要有判断。</span></span><br><span class="line">    <span class="comment">//需要从子树中拿到信息：左子树是否平衡，最大值，最小值；右子树是否平衡，最大值，最小值。</span></span><br><span class="line">    ResultType3 left = process3(node.left);</span><br><span class="line">    ResultType3 right = process3(node.right);</span><br><span class="line">    <span class="comment">//计算要往上返回的信息：max min isBST</span></span><br><span class="line">    <span class="keyword">int</span> max = node.value;</span><br><span class="line">    <span class="keyword">int</span> min = node.value;</span><br><span class="line">    <span class="keyword">if</span>(left != <span class="keyword">null</span>)&#123;</span><br><span class="line">        max = Math.max(max,left.max);</span><br><span class="line">        min = Math.min(min,left.min);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(right != <span class="keyword">null</span>)&#123;</span><br><span class="line">        max = Math.max(max,right.max);</span><br><span class="line">        min = Math.min(min,right.min);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">boolean</span> isBST = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(left != <span class="keyword">null</span> &amp;&amp; (!left.isBST  || node.value &lt;= left.max) )</span><br><span class="line">        isBST = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(right != <span class="keyword">null</span> &amp;&amp; (!right.isBST || node.value &gt;= right.min))</span><br><span class="line">        isBST = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ResultType3(min,max,isBST);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="判断是否为完全二叉树？"><a href="#判断是否为完全二叉树？" class="headerlink" title="判断是否为完全二叉树？"></a>判断是否为完全二叉树？</h2><p>1.什么是完全二叉树？</p>
+<p>二叉树的每层节点都是满的，最后一层即使不满，也会从左到右依次填充。</p>
+<img src="D:\appdata\typora_picture\image-20211122204613225.png" alt="image-20211122204613225" style="zoom:67%;" />
+
+<p>2.思路：</p>
+<p>层序遍历每一个节点：</p>
+<p>1）若某个节点，有右节点没有左节点，则返回false；</p>
+<p>2）满足1）的情况下，当遇到第一个节点左右孩子不双全之后，后序节点需要都是叶节点，若是返回true，不是返回false。</p>
+<p>java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//是否是完全二叉树</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isCST</span><span class="params">(Node head)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head==<span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    LinkedList&lt;Node&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;   <span class="comment">//定义标志，当发现第一个左右孩子节点不双全时置为true</span></span><br><span class="line">    queue.add(head);</span><br><span class="line">    <span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">        Node node = queue.poll();   <span class="comment">//弹出队列头部的节点</span></span><br><span class="line">        Node l = node.left;</span><br><span class="line">        Node r = node.right;</span><br><span class="line">        <span class="keyword">if</span>((l==<span class="keyword">null</span>&amp;&amp;r!=<span class="keyword">null</span>)||         <span class="comment">//判断左空右不空的情况</span></span><br><span class="line">            flag&amp;&amp;(l!=<span class="keyword">null</span>||r!=<span class="keyword">null</span>))     <span class="comment">//判断flag为true时，后面存在非叶子节点的情况</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(l!=<span class="keyword">null</span>)</span><br><span class="line">            queue.add(l);</span><br><span class="line">        <span class="keyword">if</span>(r!=<span class="keyword">null</span>)</span><br><span class="line">            queue.add(r);</span><br><span class="line">        <span class="keyword">if</span>(l==<span class="keyword">null</span>||r==<span class="keyword">null</span>)    <span class="comment">//左右孩子不全时置true</span></span><br><span class="line">            flag = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="判断是否为满二叉树？"><a href="#判断是否为满二叉树？" class="headerlink" title="判断是否为满二叉树？"></a>判断是否为满二叉树？</h2><p>设最大深度为l，节点数为 N，总满足 N = 2^l - 1。求出l和N，得出答案。</p>
+<p>（模板）java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ResultType2</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nodes;</span><br><span class="line">    <span class="keyword">int</span> height;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ResultType2</span><span class="params">(<span class="keyword">int</span> nodes,<span class="keyword">int</span> height)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.nodes = nodes;</span><br><span class="line">        <span class="keyword">this</span>.height = height;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    ResultType2 res = process2(node);</span><br><span class="line">    <span class="comment">//判断是否 N = 2^l-1</span></span><br><span class="line">    <span class="keyword">if</span>(res.nodes == Math.pow(<span class="number">2</span>,res.height) - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> ResultType2 <span class="title">process2</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node==<span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ResultType2(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    ResultType2 left = process2(node.left);</span><br><span class="line">    ResultType2 right = process2(node.right);</span><br><span class="line">    <span class="comment">//计算出要往上返回的两个信息: 高度和节点数</span></span><br><span class="line">    <span class="keyword">int</span> nodes = left.nodes + right.nodes + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> height = Math.max(left.height,right.height) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ResultType2(nodes,height);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="判断是否为平衡二叉树？"><a href="#判断是否为平衡二叉树？" class="headerlink" title="判断是否为平衡二叉树？"></a>判断是否为平衡二叉树？</h2><p>什么是平衡二叉树？</p>
+<p>对于任何一颗子树来说，其左侧子树和右侧子树的高度差不超过1.</p>
+<p>（模板）思路：</p>
+<p>每次对节点递归，都判断：</p>
+<ul>
+<li><p>其左子树是否为平衡二叉树；</p>
+</li>
+<li><p>其右子树是否为平衡二叉树；</p>
+</li>
+<li><p>左右子树的高度差是否不超过1。</p>
+</li>
+</ul>
+<p>由于每次递归需要返回两个信息：是否是平衡二叉树，其高度是多少。因此要自定义结构体。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ResultType</span></span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> isBalanced;</span><br><span class="line">    <span class="keyword">int</span> height;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ResultType</span><span class="params">(<span class="keyword">boolean</span> isBalanced,<span class="keyword">int</span> height)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.isBalanced = isBalanced;</span><br><span class="line">        <span class="keyword">this</span>.height = height;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isBalanced</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> process1(node).isBalanced;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ResultType <span class="title">process1</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node==<span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ResultType(<span class="keyword">true</span>,<span class="number">0</span>);</span><br><span class="line">    ResultType left = process1(node.left);</span><br><span class="line">    ResultType right = process1(node.right);</span><br><span class="line">    <span class="comment">//计算出需要返回的hegiht和isBalanced。</span></span><br><span class="line">    <span class="keyword">int</span> height = Math.max(left.height,right.height)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">boolean</span> isBalanced = left.isBalanced &amp;&amp; right.isBalanced &amp;&amp; Math.abs(left.height-right.height)&lt;<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ResultType(isBalanced,height);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 
                     <div class="clearfix"></div>
                     <hr class="nogutter">
             </div>
             <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
-    
-    <a class="pull-left" href="/2021/04/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C/" style="float: left;">
-        ← 
-    </a>
     
     
     <a class="pull-right" href="/2021/04/24/git%E7%9A%84%E4%BD%BF%E7%94%A8/">
