@@ -95,7 +95,7 @@
                             
                                 <li>
                                     <a href="/categories/编程/" class="animsition-link">
-                                        编程<small>(2)</small></a>
+                                        编程<small>(5)</small></a>
                                 </li>
                                 
                                 <li>
@@ -118,7 +118,7 @@
                                         
                                         <li>
                                             <a href="/tags/算法与数据结构/" class="animsition-link">
-                                                算法与数据结构<small>(1)</small></a>
+                                                算法与数据结构<small>(4)</small></a>
                                         </li>
                                         
                                 </ul>
@@ -241,20 +241,25 @@
 <p><img src="https://gitee.com/changa-code/blog-images/raw/master/40ace2e5-87ae-4ca9-b936-f3fcb0bac768.png" alt="img"></p>
 <p>4.输入git clone +仓库地址    </p>
 <p><img src="https://gitee.com/changa-code/blog-images/raw/master/20210424104019.png"></p>
-<p>成功：</p>
+<p>5.如图成功：</p>
 <p><img src="https://gitee.com/changa-code/blog-images/raw/master/4629194c-73be-480f-b6fd-40fbae55710d.png" alt="img"></p>
+<p>总结：</p>
+<p><strong>创文件夹，执行命令：</strong></p>
+<p><strong>git init</strong></p>
+<p><strong>git clone + 仓库地址</strong></p>
 <h2 id="2-上传项目或者修改到github："><a href="#2-上传项目或者修改到github：" class="headerlink" title="2.上传项目或者修改到github："></a>2.上传项目或者修改到github：</h2><p>1)、git init 初始化仓库，将这个目录变成git可以管理的仓库（上传修改的话就不用这步了）</p>
-<p><img src="D:\appdata\blog\source_posts\git的使用.assets\image-20210811165343467.png" alt="image-20210811165343467"></p>
+<p><img src="https://gitee.com/changa-code/blog-images/raw/master/image-20210811165343467.png" alt="image-20210811165343467"></p>
 <p>然后将需要上传的文件复制过来</p>
-<p><img src="D:\appdata\blog\source_posts\git的使用.assets\image-20210811165618687.png" alt="image-20210811165618687"></p>
+<p><img src="https://gitee.com/changa-code/blog-images/raw/master/image-20210811165618687.png" alt="image-20210811165618687"></p>
 <p>2)、 然后使用git add . 将文件添加到暂存区里面去，注意后边的 .</p>
 <p>3)、然后执行git commit -m ‘描述内容’ 命令将文件提交到仓库</p>
 <p>4）创建main分支：git branch -M main</p>
 <p>5)、然后关联git仓库，因为此时git还不知道要将我们的项目添加到哪里去。<br>接下来执行命令：git remote add origin 远程仓库的地址</p>
 <p>6)、然后执行git pull –rebase origin main命令，将文件与远程仓库进行合并</p>
 <p>7)、然后将本地文件推送到gitee/github仓库中，<br>使用命令：git push -u origin main命令</p>
-<h3 id="github的官方命令："><a href="#github的官方命令：" class="headerlink" title="github的官方命令："></a>github的官方命令：</h3><p><img src="D:\appdata\blog\source_posts\git的使用.assets\image-20210811180355235.png" alt="image-20210811180355235"></p>
-<h2 id="3-出现问题："><a href="#3-出现问题：" class="headerlink" title="3.出现问题："></a>3.出现问题：</h2><h3 id="1-报错error-failed-to-push-some-refs-to-‘github-com-CHANGEA-code-TomatoClock-git’"><a href="#1-报错error-failed-to-push-some-refs-to-‘github-com-CHANGEA-code-TomatoClock-git’" class="headerlink" title="1.报错error: failed to push some refs to ‘github.com:CHANGEA-code/TomatoClock.git’"></a>1.报错error: failed to push some refs to ‘github.com:CHANGEA-code/TomatoClock.git’</h3><p><img src="D:\appdata\blog\source_posts\git的使用.assets\image-20210811171151343.png" alt="image-20210811171151343"></p>
+<h2 id="3-github的官方命令："><a href="#3-github的官方命令：" class="headerlink" title="3.github的官方命令："></a>3.github的官方命令：</h2><p><img src="https://gitee.com/changa-code/blog-images/raw/master/image-20210811180355235.png" alt="image-20210811180355235"></p>
+<h2 id="4-出现问题："><a href="#4-出现问题：" class="headerlink" title="4.出现问题："></a>4.出现问题：</h2><p>1.报错error: failed to push some refs to ‘github.com:CHANGEA-code/TomatoClock.git’</p>
+<p><img src="https://gitee.com/changa-code/blog-images/raw/master/image-20210811171151343.png" alt="image-20210811171151343"></p>
 <ul>
 <li><p>原因：有可能远程的分支进行了更新，但是本地的分支落后了，这时候进行推送就出现问题。</p>
 </li>
@@ -263,7 +268,8 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin main</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-报错error：error-cannot-pull-with-rebase-You-have-unstaged-changes"><a href="#2-报错error：error-cannot-pull-with-rebase-You-have-unstaged-changes" class="headerlink" title="2.报错error：error: cannot pull with rebase: You have unstaged changes."></a>2.报错error：error: cannot pull with rebase: You have unstaged changes.</h3><p><img src="D:\appdata\blog\source_posts\git的使用.assets\image-20210817154801213.png" alt="image-20210817154801213"></p>
+<p>2.报错error：error: cannot pull with rebase: You have unstaged changes.</p>
+<p><img src="https://gitee.com/changa-code/blog-images/raw/master/image-20210817154801213.png" alt="image-20210817154801213"></p>
 <ul>
 <li>解决：</li>
 </ul>
@@ -273,8 +279,8 @@
             </div>
             <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2021/11/23/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%93%E9%A2%98%E4%B8%80/" style="float: left;">
-        ← 【算法与数据结构】二叉树专题一
+    <a class="pull-left" href="/2021/11/23/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%93%E9%A2%98%E4%B8%80-%E5%88%A4%E6%96%AD/" style="float: left;">
+        ← 【算法与数据结构】二叉树专题一：判断
     </a>
     
     

@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Category: 随笔 | CHANGEA&#39;S BLOG</title>
+  <title>【算法与数据结构】二叉树专题三：其他 | CHANGEA&#39;S BLOG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -217,69 +217,179 @@
     </div>
 
     <!-- ============================ Header & Logo bar =========================== -->
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-
-                    </div>
-                </div>
+      
+    <section id="intro">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <span class="post-meta">
+      <time datetime="2021-11-24T11:24:40.000Z" itemprop="datePublished">
+          2021-11-24
+      </time>
+    
+    
+    | 
+    <a href='/tags/算法与数据结构/'>算法与数据结构</a>
+    
+    
+</span>
+                    <h1>
+                        【算法与数据结构】二叉树专题三：其他
+                    </h1>
             </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
+            <div class="col-md-8 col-md-offset-2">
+                <h3 id="1-最低公共祖先节点（重要，不熟）"><a href="#1-最低公共祖先节点（重要，不熟）" class="headerlink" title="1.最低公共祖先节点（重要，不熟）"></a>1.最低公共祖先节点（重要，不熟）</h3><blockquote>
+<p> 题目： 给定两个二叉树的节点node1和node2，找到他们的最低公共祖先节点（重要）</p>
+</blockquote>
+<p>直接上代码java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//找出最低公共子节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Node <span class="title">lowerAncestor</span><span class="params">(Node head,Node o1,Node o2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head == <span class="keyword">null</span> || head == o1 || head == o2)    <span class="comment">//遇到null，o1，o2都返回head</span></span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    <span class="comment">//获取子节点的信息</span></span><br><span class="line">    Node left = lowerAncestor(head.left,o1,o2);</span><br><span class="line">    Node right = lowerAncestor(head.right,o1,o2);</span><br><span class="line">    <span class="keyword">if</span>(left != <span class="keyword">null</span> &amp;&amp; right != <span class="keyword">null</span>)               <span class="comment">//对一种情况做判断</span></span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    <span class="keyword">return</span> left != <span class="keyword">null</span> ? left : right;             <span class="comment">//这条代码对其他三种情况做了判断</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
+<h3 id="2-找出后继节点"><a href="#2-找出后继节点" class="headerlink" title="2.找出后继节点"></a>2.找出后继节点</h3><blockquote>
+<p>题目：给定一个新的二叉树节点类型：比一般的二叉树多一个指向父节点的指针。如下：</p>
+<p>public class Node {</p>
+<p>public int value;</p>
+<p>public Node left , right , parent;</p>
+<p>public Node(int val) { value = val; }</p>
+<p>}</p>
+<p>要求在二叉树中找到一个节点的后继节点</p>
+</blockquote>
+<p>什么是后继节点和前驱节点？</p>
+<ul>
+<li>中序遍历中，node的下一个节点叫作node的后继节点，node的上一个节点叫作node的前驱节点。</li>
+</ul>
+<p>思路：对每个节点，判断是否有右子树：</p>
+<ul>
+<li><p>若有，则后继节点是右子树的最左节点。</p>
+</li>
+<li><p>若没有，则往上符合“我是父亲的左节点”的节点，若有则返回该父节点，否则继续往上找。若父节点为null，（说明要找的节点是中序遍历的最后一个节点）返回null。</p>
+</li>
+</ul>
+<p>口诀：<strong>判右子树，有找最左子，无找右上父。</strong></p>
+<p>Java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中序遍历的后继节点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Node <span class="title">findAfterNode</span><span class="params">(Node head,Node node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head == <span class="keyword">null</span> || node == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(node.right != <span class="keyword">null</span>)&#123;         <span class="comment">//右子树不空，则找最左节点</span></span><br><span class="line">        <span class="keyword">return</span> getMostLeft(node.right); <span class="comment">//找最左节点</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getRightParent(node);    <span class="comment">//找右父节点</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Node <span class="title">getMostLeft</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(node.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">        node = node.left;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Node <span class="title">getRightParent</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    Node parent = node.parent;</span><br><span class="line">    <span class="keyword">while</span>(parent != <span class="keyword">null</span> &amp;&amp; parent.left != node)&#123;</span><br><span class="line">        node = parent;</span><br><span class="line">        parent = node.parent;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> parent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<!-- ============================ END Hero Image =========================== -->
+<h3 id="3-序列化和反序列化-熟悉"><a href="#3-序列化和反序列化-熟悉" class="headerlink" title="3.序列化和反序列化(熟悉)"></a>3.序列化和反序列化(熟悉)</h3><p>序列化是指将一颗二叉树转化为字符串的形式。一般转化为“节点值_”的形式。</p>
+<p>反序列化是指将字符串转化为一颗二叉树。一般是以‘_’分割成字符串数组，再放到队列中，遍历构造二叉树。</p>
+<p>以上可以用前中后层序的方式。</p>
+<h3 id="4-折纸问题"><a href="#4-折纸问题" class="headerlink" title="4.折纸问题"></a>4.折纸问题</h3><blockquote>
+<p>题目：请把一段纸条竖着放在桌子上，然后从纸条的下边向上方对折1次，压出折痕后 展开。 此时折痕是凹下去的，即折痕突起的方向指向纸条的背面。 如果从纸条的下边向上方连续对折2次，压出折痕后展开，此时有三条折痕，从 上到下依次是下折痕、下折痕和上折痕。 给定一个输入参数N，代表纸条都从下边向上方连续对折N次。 请从上到下打印所有折痕的方向。 例如:N=1时，打印: down N=2时，打印: down down</p>
+</blockquote>
+<p>思路：</p>
+<p>假想一颗二叉树，左子树是凹，右子树是凸，对深度为n的二叉树进行中序遍历，得到的结果即为所求。</p>
+<p>口诀：<strong>想二叉树，左子为凹，右子为凸，中序遍历</strong>。</p>
+<p><img src="D:\appdata\typora_picture\image-20211124131057701.png" alt="image-20211124131057701"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//折纸问题</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">foldPaper</span><span class="params">(<span class="keyword">int</span> N)</span></span>&#123;</span><br><span class="line">    process4(<span class="number">1</span>,N,<span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//down :true表示凹，false表示凸</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">process4</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> n, <span class="keyword">boolean</span> down)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i&gt;n)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    process4(i+<span class="number">1</span>,n,<span class="keyword">true</span>);</span><br><span class="line">    System.out.print(down==<span class="keyword">true</span>?<span class="string">&#x27;凹&#x27;</span>:<span class="string">&#x27;凸&#x27;</span>);</span><br><span class="line">    process4(i+<span class="number">1</span>,n,<span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="5-二叉树节点中的最大距离"><a href="#5-二叉树节点中的最大距离" class="headerlink" title="5.二叉树节点中的最大距离"></a>5.二叉树节点中的最大距离</h3><blockquote>
+<p>题目：从二叉树的节点a出发，可以向上或者向下走，但沿途的节点只能经过一次，到达节点b时路 径上的节点个数叫作a到b的距离，那么二叉树任何两个节点之间都有距离，求整棵树上的最大距离。</p>
+</blockquote>
+<p>思路：</p>
+<p>对每个节点，分两种情况：</p>
+<ul>
+<li><p>不参与，则最大距离可能是<strong>左子树的最大距离或右子树的最大距离</strong>。</p>
+</li>
+<li><p>参与，则最大距离可能是<strong>左子树高度+1+右子树高度</strong>。</p>
+</li>
+</ul>
+<p>每个节点的最大距离对三者取max即可。</p>
+<p>套用模板解法：每个节点都要从左右子树中拿到最大距离和高度，自己也要计算出这些信息往上返回。</p>
+<p>java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//求二叉树中节点的最大距离</span></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ResultType4</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxDis;</span><br><span class="line">    <span class="keyword">int</span> height;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ResultType4</span><span class="params">(<span class="keyword">int</span> maxDis,<span class="keyword">int</span> height)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.maxDis = maxDis;</span><br><span class="line">        <span class="keyword">this</span>.height = height;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxDistance</span><span class="params">(Node head)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> process5(head).maxDis;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ResultType4 <span class="title">process5</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ResultType4(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    ResultType4 left = process5(node.left);</span><br><span class="line">    ResultType4 right = process5(node.right);</span><br><span class="line">    <span class="keyword">int</span> height = Math.max(left.height,right.height)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> maxDis = left.height+right.height+<span class="number">1</span>;</span><br><span class="line">    maxDis = Math.max(Math.max(left.maxDis,right.maxDis),maxDis);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ResultType4(maxDis,height);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="6-最大快乐值"><a href="#6-最大快乐值" class="headerlink" title="6.最大快乐值"></a>6.最大快乐值</h3><blockquote>
+<p>题目：派对的最大快乐值 员工信息的定义如下: </p>
+<p>class Employee { </p>
+<p>public int happy; // 这名员工可以带来的快乐值 </p>
+<p>List subordinates; // 这名员工有哪些直接下级</p>
+<p>} 公司的每个员工都符合 Employee 类的描述。</p>
+<p>整个公司的人员结构可以看作是一棵标准的、 没有环的 多叉树。树的头节点是公司唯一的老板。除老板之外的每个员工都有唯一的直接上级。 叶节点是没有 任何下属的基层员工(subordinates列表为空)，除基层员工外，每个员工都有一个或多个直接下级。 这个公司现在要办party，你可以决定哪些员工来，哪些员工不来。</p>
+<p>但是要遵循如下规则。 </p>
+<p>1.如果某个员工来了，那么这个员工的所有直接下级都不能来 </p>
+<p>2.派对的整体快乐值是所有到场员工快乐值的累加 </p>
+<p>3.你的目标是让派对的整体快乐值尽量大 给定一棵多叉树的头节点boss，请返回派对的最大快乐值。</p>
+</blockquote>
+<p>思路：对每一个节点，判断是否参与：</p>
+<ul>
+<li><p>若参与，最大快乐值为该节点的所有子节点不参与时，子节点包含的树构成的最大快乐值相加</p>
+</li>
+<li><p>若不参与，最大快乐值为子节点参与或者不参与时，子节点包含的树的最大快乐值取max，再和所有的子节点得出的值相加</p>
+</li>
+</ul>
+<p>最后对根节点的以上两种情况取max即可。</p>
+<p>模板思路：<strong>每个节点要从子节点得到子节点参与时的最大快乐值和不参与时的最大快乐值。</strong></p>
+<img src="D:\appdata\typora_picture\image-20211124212417150.png" alt="image-20211124212417150" style="zoom:67%;" />
 
+<img src="D:\appdata\typora_picture\image-20211124212431829.png" alt="image-20211124212431829" style="zoom:67%;" />
+                    <div class="clearfix"></div>
+                    <hr class="nogutter">
+            </div>
+            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2021/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%93%E9%A2%98%E5%9B%9B-Morris%E9%81%8D%E5%8E%86/" style="float: left;">
+        ← 【算法与数据结构】二叉树专题四：Morris遍历
+    </a>
+    
+    
+    <a class="pull-right" href="/2021/11/23/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%93%E9%A2%98%E4%BA%8C-%E9%81%8D%E5%8E%86/">
+        【算法与数据结构】二叉树专题二：遍历 →
+    </a>
+    
+</nav>
 
-<section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/23/为何记笔记？/">为何记笔记？</a></h4>
-                            
-                            <p><time datetime="2021-11-23T07:31:47.000Z"><a href="/2021/11/23/为何记笔记？/">2021-11-23</a></time></p>
-                        </div>
-                    
+                <div class="col-md-8 col-md-offset-2 col-sm-24">
+                    <script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+
                 </div>
-            </div>    
         </div>
-    </div>
-</section> 
+    </section>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-        </div>
-    </div>
-</section>
       
 <!-- ============================ Footer =========================== -->
 

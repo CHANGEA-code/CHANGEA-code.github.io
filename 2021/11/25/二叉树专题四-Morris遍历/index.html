@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Category: 随笔 | CHANGEA&#39;S BLOG</title>
+  <title>【算法与数据结构】二叉树专题四：Morris遍历 | CHANGEA&#39;S BLOG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -217,69 +217,119 @@
     </div>
 
     <!-- ============================ Header & Logo bar =========================== -->
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-
-                    </div>
-                </div>
+      
+    <section id="intro">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <span class="post-meta">
+      <time datetime="2021-11-25T11:48:30.000Z" itemprop="datePublished">
+          2021-11-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/算法与数据结构/'>算法与数据结构</a>
+    
+    
+</span>
+                    <h1>
+                        【算法与数据结构】二叉树专题四：Morris遍历
+                    </h1>
             </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
+            <div class="col-md-8 col-md-offset-2">
+                <h3 id="Morris遍历（重要）"><a href="#Morris遍历（重要）" class="headerlink" title="Morris遍历（重要）"></a>Morris遍历（重要）</h3><p>通过利用原树中大量空闲指针的方式，达到节省空间的目的。</p>
+<p>时间复杂度O(n)，**空间复杂度O(1)**；</p>
+<p>面试用，笔试不用。因为出错率高，但空间复杂度低。</p>
+<p>口诀：<strong>看有无左孩子，若无往右移动，若有找左树最右节点，判断第几次访问。一次指向cur，往左走。二次指向空，往右走。</strong></p>
+<img src="https://gitee.com/changa-code/blog-images/raw/master/image-20211124215237108.png" alt="image-20211124215237108" style="zoom:67%;" />
 
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
+<p>Morris遍历的实质：<strong>建立一种机制，对于没有左子树的节点只到达一次，对于有左子树的节点会到达两次</strong></p>
+<p>递归遍历中，可以遍历每个节点3次，而Morris遍历中，最多遍历2次。</p>
+<p>java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">morris</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    TreeNode cur = root;</span><br><span class="line">    <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur.left != <span class="keyword">null</span>)&#123;  		<span class="comment">//有左孩子</span></span><br><span class="line">            TreeNode mostRight = cur.left;</span><br><span class="line">            <span class="keyword">while</span>(mostRight.right != <span class="keyword">null</span> &amp;&amp; mostRight.right != cur)&#123;</span><br><span class="line">                mostRight = mostRight.right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//此时的mostRight是最右节点</span></span><br><span class="line">            <span class="keyword">if</span>(mostRight.right == <span class="keyword">null</span>)&#123;    <span class="comment">//说明是第一次到达</span></span><br><span class="line">                mostRight.right = cur;</span><br><span class="line">                cur = cur.left;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            	mostRight.right = <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cur = cur.right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<!-- ============================ END Hero Image =========================== -->
+<h3 id="Morris改先序遍历："><a href="#Morris改先序遍历：" class="headerlink" title="Morris改先序遍历："></a>Morris改先序遍历：</h3><p>访问一次的节点直接输出，<strong>访问两次的节点在第一次访问输出</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderMorris</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    TreeNode cur = root;</span><br><span class="line">    <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur.left != <span class="keyword">null</span>)&#123;       <span class="comment">//有左子树</span></span><br><span class="line">            TreeNode mostRight = cur.left;</span><br><span class="line">            <span class="keyword">while</span>(mostRight.right != <span class="keyword">null</span> &amp;&amp; mostRight.right != cur)&#123;</span><br><span class="line">                mostRight = mostRight.right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(mostRight.right == <span class="keyword">null</span>)&#123;    <span class="comment">//第一次来</span></span><br><span class="line">                list.add(cur.val);          <span class="comment">//修改的地方</span></span><br><span class="line">                mostRight.right = cur;      </span><br><span class="line">                cur = cur.left;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                mostRight.right = <span class="keyword">null</span>;     <span class="comment">//第二次来</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;      <span class="comment">//没有左子树</span></span><br><span class="line">            list.add(cur.val);  <span class="comment">//修改的地方</span></span><br><span class="line">        &#125;</span><br><span class="line">        cur = cur.right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="Morris改中序遍历："><a href="#Morris改中序遍历：" class="headerlink" title="Morris改中序遍历："></a>Morris改中序遍历：</h3><p>访问一次的节点直接输出，<strong>访问两次的节点在第二次访问输出</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderMorris</span><span class="params">(Treode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    TreeNode cur = root;</span><br><span class="line">    <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur.left != <span class="keyword">null</span>)&#123;  <span class="comment">//有左孩子</span></span><br><span class="line">            TreeNode mostRight = cur.left;</span><br><span class="line">            <span class="keyword">while</span>(mostRight.right != <span class="keyword">null</span> &amp;&amp; mostRight.right != cur)&#123;	<span class="comment">//求出左树最右节点</span></span><br><span class="line">                mostRight = mostRight.right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//此时的mostRight是最右节点</span></span><br><span class="line">            <span class="keyword">if</span>(mostRight.right == <span class="keyword">null</span>)&#123;    <span class="comment">//说明是第一次到达</span></span><br><span class="line">                mostRight.right = cur;</span><br><span class="line">                cur = cur.left;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            	mostRight.right = <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        list.add(cur.val);		<span class="comment">//修改的地方</span></span><br><span class="line">        cur = cur.right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="Morris改后序遍历："><a href="#Morris改后序遍历：" class="headerlink" title="Morris改后序遍历："></a>Morris改后序遍历：</h3><p>每次访问第二次节点的时候，将该节点的左子树右边界逆序打印。结束后逆序打印整颗树的右边界。</p>
+<img src="https://gitee.com/changa-code/blog-images/raw/master/image-20211125110827909.png" alt="image-20211125110827909" style="zoom: 33%;" />
 
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    TreeNode cur = root;</span><br><span class="line">    <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur.left != <span class="keyword">null</span>)&#123;   <span class="comment">//有左孩子</span></span><br><span class="line">            TreeNode mostRight = cur.left;</span><br><span class="line">            <span class="keyword">while</span>(mostRight.right != <span class="keyword">null</span> &amp;&amp; mostRight.right != cur)&#123;</span><br><span class="line">                mostRight = mostRight.right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(mostRight.right == <span class="keyword">null</span>)&#123;    <span class="comment">//第一次访问</span></span><br><span class="line">                mostRight.right = cur;</span><br><span class="line">                cur = cur.left;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;          <span class="comment">//第二次访问</span></span><br><span class="line">                mostRight.right = <span class="keyword">null</span>;</span><br><span class="line">                printEdge(cur.left);     <span class="comment">//修改的地方</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cur = cur.right;</span><br><span class="line">    &#125;</span><br><span class="line">    printEdge(root);       <span class="comment">//修改的地方</span></span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printEdge</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line">    TreeNode tail = reverseEdge(root);</span><br><span class="line">    TreeNode node = tail;</span><br><span class="line">    <span class="keyword">while</span>(node != <span class="keyword">null</span>)&#123;</span><br><span class="line">        list.add(node.val);</span><br><span class="line">        node = node.right;</span><br><span class="line">    &#125;</span><br><span class="line">    reverseEdge(tail);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">reverseEdge</span><span class="params">(TreeNode from)</span></span>&#123;</span><br><span class="line">    TreeNode next = <span class="keyword">null</span>,pre = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">while</span>(from != <span class="keyword">null</span>)&#123;</span><br><span class="line">        next = from.right;</span><br><span class="line">        from.right = pre;</span><br><span class="line">        pre =  from;</span><br><span class="line">        from = next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/23/为何记笔记？/">为何记笔记？</a></h4>
-                            
-                            <p><time datetime="2021-11-23T07:31:47.000Z"><a href="/2021/11/23/为何记笔记？/">2021-11-23</a></time></p>
-                        </div>
-                    
+<h3 id="判断搜索二叉树Morris解法："><a href="#判断搜索二叉树Morris解法：" class="headerlink" title="判断搜索二叉树Morris解法："></a>判断搜索二叉树Morris解法：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//morris改写判断是否搜索二叉树:先序遍历，节点值需要升序</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isBST2</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    Node cur = node;</span><br><span class="line">    <span class="keyword">int</span> pre = Integer.MIN_VALUE;</span><br><span class="line">    <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(cur.left != <span class="keyword">null</span>)&#123;   <span class="comment">//有左孩子</span></span><br><span class="line">            Node mostRight = cur.left;</span><br><span class="line">            <span class="keyword">while</span>(mostRight.right != <span class="keyword">null</span> &amp;&amp; mostRight.right != cur)&#123;</span><br><span class="line">                mostRight = mostRight.right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(mostRight.right == <span class="keyword">null</span>) &#123;    <span class="comment">//第一次访问</span></span><br><span class="line">                mostRight.right = cur;</span><br><span class="line">                cur = cur.left;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                mostRight.right = <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(cur.value &lt;= pre)&#123;   <span class="comment">//若节点值不升序</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        pre = cur.value;</span><br><span class="line">        cur = cur.right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+
+                    <div class="clearfix"></div>
+                    <hr class="nogutter">
+            </div>
+            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2021/11/24/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%93%E9%A2%98%E4%B8%89-%E5%85%B6%E4%BB%96/">
+        【算法与数据结构】二叉树专题三：其他 →
+    </a>
+    
+</nav>
+
+                <div class="col-md-8 col-md-offset-2 col-sm-24">
+                    <script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+
                 </div>
-            </div>    
         </div>
-    </div>
-</section> 
+    </section>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-        </div>
-    </div>
-</section>
       
 <!-- ============================ Footer =========================== -->
 
