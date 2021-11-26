@@ -276,7 +276,8 @@
 <p>思路：</p>
 <p>假想一颗二叉树，左子树是凹，右子树是凸，对深度为n的二叉树进行中序遍历，得到的结果即为所求。</p>
 <p>口诀：<strong>想二叉树，左子为凹，右子为凸，中序遍历</strong>。</p>
-<p><img src="D:\appdata\typora_picture\image-20211124131057701.png" alt="image-20211124131057701"></p>
+<img src="https://gitee.com/changa-code/blog-images/raw/master/image-20211124131057701.png" alt="image-20211124131057701" style="zoom:50%;" />
+
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//折纸问题</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">foldPaper</span><span class="params">(<span class="keyword">int</span> N)</span></span>&#123;</span><br><span class="line">    process4(<span class="number">1</span>,N,<span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//down :true表示凹，false表示凸</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">process4</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> n, <span class="keyword">boolean</span> down)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i&gt;n)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    process4(i+<span class="number">1</span>,n,<span class="keyword">true</span>);</span><br><span class="line">    System.out.print(down==<span class="keyword">true</span>?<span class="string">&#x27;凹&#x27;</span>:<span class="string">&#x27;凸&#x27;</span>);</span><br><span class="line">    process4(i+<span class="number">1</span>,n,<span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="5-二叉树节点中的最大距离"><a href="#5-二叉树节点中的最大距离" class="headerlink" title="5.二叉树节点中的最大距离"></a>5.二叉树节点中的最大距离</h3><blockquote>
@@ -316,9 +317,11 @@
 </ul>
 <p>最后对根节点的以上两种情况取max即可。</p>
 <p>模板思路：<strong>每个节点要从子节点得到子节点参与时的最大快乐值和不参与时的最大快乐值。</strong></p>
-<img src="D:\appdata\typora_picture\image-20211124212417150.png" alt="image-20211124212417150" style="zoom:67%;" />
+<img src="https://gitee.com/changa-code/blog-images/raw/master/image-20211124212417150.png" alt="image-20211124212417150" style="zoom:67%;" />
 
-<img src="D:\appdata\typora_picture\image-20211124212431829.png" alt="image-20211124212431829" style="zoom:67%;" />
+<img src="https://gitee.com/changa-code/blog-images/raw/master/image-20211124212431829.png" alt="image-20211124212431829" style="zoom:67%;" />
+
+
                     <div class="clearfix"></div>
                     <hr class="nogutter">
             </div>
