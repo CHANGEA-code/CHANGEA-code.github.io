@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2021/11 | CHANGEA&#39;S BLOG</title>
+  <title>【算法与数据结构】贪心算法专题 | CHANGEA&#39;S BLOG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -217,147 +217,147 @@
     </div>
 
     <!-- ============================ Header & Logo bar =========================== -->
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-
-                    </div>
-                </div>
+      
+    <section id="intro">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <span class="post-meta">
+      <time datetime="2021-11-29T13:52:50.000Z" itemprop="datePublished">
+          2021-11-29
+      </time>
+    
+    
+    | 
+    <a href='/tags/算法与数据结构/'>算法与数据结构</a>
+    
+    
+</span>
+                    <h1>
+                        【算法与数据结构】贪心算法专题
+                    </h1>
             </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
+            <div class="col-md-8 col-md-offset-2">
+                <img src="D:\appdata\typora_picture\image-20211023141411658.png" alt="image-20211023141411658" style="zoom: 67%;" />
 
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
+<h4 id="1-切金条-容易"><a href="#1-切金条-容易" class="headerlink" title="1.切金条(容易)"></a>1.切金条(容易)</h4><blockquote>
+<p>一块金条切成两半，是需要花费和长度数值一样的铜板的。比如长度为20的金条，不管切成长度多大的两半，都要花费20个铜板。 一群人想整分整块金条，怎么分最省铜板? </p>
+<p>例如,给定数组{10,20,30}，代表一共三个人，整块金条长度为10+20+30=60。 金条要分成10,20,30三个部分。 如果先把长度60的金条分成10和50，花费60； 再把长度50的金条分成20和30，花费50；一共花费110铜板。 但是如果先把长度60的金条分成30和30，花费60；再把长度30金条分成10和20， 花费30；一共花费90铜板。 </p>
+<p>输入一个数组，返回分割的最小代价。</p>
+</blockquote>
+<p>思路：每次都保证砍出的两部分，<strong>一部分是数组最大的那个数</strong>即可。</p>
+<p>解题时只需要准备一个小根堆，每次将最小的合并累加即可。</p>
+<p>java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">lessMoney</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">    PriorityQueue&lt;Integer&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;();  <span class="comment">//小根堆</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> val : arr) &#123;</span><br><span class="line">        pq.add(val);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(pq.size()&gt;<span class="number">1</span>)&#123;</span><br><span class="line">        Integer cur = pq.poll() + pq.poll();</span><br><span class="line">        res += cur;</span><br><span class="line">        pq.add(cur);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<!-- ============================ END Hero Image =========================== -->
+<h4 id="2-会议室安排演讲时间-容易"><a href="#2-会议室安排演讲时间-容易" class="headerlink" title="2.会议室安排演讲时间(容易)"></a>2.会议室安排演讲时间(容易)</h4><blockquote>
+<p>一些项目要占用一个会议室宣讲，会议室不能同时容纳两个项目的宣讲。 给你每一个项目开始的时间和结束的时间(给你一个数组，里面是一个个具体的项目)，你来安排宣讲的日程，要求会议室进行的宣讲的场次最多。 返回这个最多的宣讲场次。</p>
+</blockquote>
+<p>思路：对宣讲的项目按结束时间进行排序，从前往后对宣讲进行安排即可。    </p>
+<h4 id="3-字符串最小字典序-重要，不熟"><a href="#3-字符串最小字典序-重要，不熟" class="headerlink" title="3.字符串最小字典序(重要，不熟)"></a>3.字符串最小字典序(重要，不熟)</h4><blockquote>
+<p>给定一个字符串类型的数组strs，找到一种拼接方式，使得把所有字符串拼起来之后形成的 字符串具有最小的字典序。</p>
+</blockquote>
+<p>思路：将数组按a+b大于b+a就a排前面b排后面的顺序，进行排序，再将数组拼接成字符串即可。</p>
+<p>java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">lowerString</span><span class="params">(String[] strs)</span></span>&#123;</span><br><span class="line">    Arrays.sort(strs,<span class="keyword">new</span> MyComparator());</span><br><span class="line">    String res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (String str : strs) &#123;</span><br><span class="line">        res += str;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-找最大利润"><a href="#4-找最大利润" class="headerlink" title="4.找最大利润"></a>4.找最大利润</h4><blockquote>
+<p>输入： </p>
+<p>正数数组costs ，正数数组profits ，正数k ，正数m</p>
+<p>含义： costs[i]表示i号项目的花费； profits[i]表示i号项目在扣除花费之后还能挣到的钱(利润)； k表示你只能串行的最多做k个项目； m表示你初始的资金 ；</p>
+<p>说明： 你每做完一个项目，马上获得的收益，可以支持你去做下一个项目。</p>
+<p>输出： 你最后获得的最大钱数。</p>
+</blockquote>
+<p>思路：准备一个以花费为准的小根堆，一个以利润为准的大根堆。</p>
+<p>每次，从小根堆中解锁项目放到大根堆中，从大根堆中选出利润最大的项目做，做完资金增加，继续解锁小根堆中的项目。</p>
+<p>循环k轮次，或者资金不够结束。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MinCostComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">NewNode</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(NewNode o1, NewNode o2)</span> </span>&#123;    <span class="comment">//花费从小到大</span></span><br><span class="line">        <span class="keyword">return</span> o1.cost - o2.cost;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MaxProfitComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">NewNode</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(NewNode o1, NewNode o2)</span> </span>&#123;    <span class="comment">//利润从大到小</span></span><br><span class="line">        <span class="keyword">return</span> o2.profit - o1.profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxMoney</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> w,<span class="keyword">int</span>[] cost,<span class="keyword">int</span>[] profit)</span></span>&#123;</span><br><span class="line">    PriorityQueue&lt;NewNode&gt; minCostQueue = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="keyword">new</span> MinCostComparator());</span><br><span class="line">    PriorityQueue&lt;NewNode&gt; maxProfitQueue = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="keyword">new</span> MaxProfitComparator());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;cost.length;i++)&#123;     <span class="comment">//初始化minCostQueue</span></span><br><span class="line">        minCostQueue.add(<span class="keyword">new</span> NewNode(cost[i],profit[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;   <span class="comment">//k轮循环</span></span><br><span class="line">        <span class="comment">//能力所及的项目全解锁</span></span><br><span class="line">        <span class="keyword">while</span>(!minCostQueue.isEmpty() &amp;&amp; minCostQueue.peek().cost&lt;=w)</span><br><span class="line">            maxProfitQueue.add(minCostQueue.poll());</span><br><span class="line">        <span class="keyword">if</span>(maxProfitQueue.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> w;</span><br><span class="line">        &#125;</span><br><span class="line">        w += maxProfitQueue.poll().profit;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> w;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="D:\appdata\typora_picture\image-20211128225851727.png" alt="image-20211128225851727" style="zoom: 50%;" />
+
+<h4 id="5-数据流取中位数"><a href="#5-数据流取中位数" class="headerlink" title="5.数据流取中位数"></a>5.数据流取中位数</h4><blockquote>
+<p>一个数据流中，随时可以取得中位数</p>
+</blockquote>
+<p>思路：维持一个大根堆和一个小根堆。拿到一个数：</p>
+<p>1)先判断是否&lt;=大根堆的堆顶，是则加到大根堆中，否则加到小根堆中。</p>
+<p>2)然后，判断大根堆和小根堆的大小相差的绝对值是否为2，若是，则将大的那个堆弹出一个元素到另一个堆中。</p>
+<p>这样，两个堆总是维持着1/2个元素。中位数就根据堆大小和堆顶部元素得出。</p>
+<img src="D:\appdata\typora_picture\image-20211129103645309.png" alt="image-20211129103645309" style="zoom:50%;" />
+
+<p>java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">midNumber</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">    PriorityQueue&lt;Integer&gt; smallQueue = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">    PriorityQueue&lt;Integer&gt; bigQueue = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="keyword">new</span> BigComparator());</span><br><span class="line">    bigQueue.add(arr[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] &lt;= bigQueue.peek())&#123;  <span class="comment">//若&lt;=大根堆堆顶，进大根堆</span></span><br><span class="line">            bigQueue.add(arr[i]);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;                          <span class="comment">//否则进小根堆</span></span><br><span class="line">            smallQueue.add(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(Math.abs(bigQueue.size() - smallQueue.size())==<span class="number">2</span>)&#123;   <span class="comment">//若大小相差2，平衡一下</span></span><br><span class="line">            <span class="keyword">if</span>(bigQueue.size() &gt; smallQueue.size())&#123;</span><br><span class="line">                smallQueue.add(bigQueue.poll());</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                bigQueue.add(smallQueue.poll());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(bigQueue.size() == smallQueue.size())</span><br><span class="line">        <span class="keyword">return</span> (bigQueue.peek()+smallQueue.peek())/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> bigQueue.size()&gt;smallQueue.size()?bigQueue.peek():smallQueue.peek();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+                    <div class="clearfix"></div>
+                    <hr class="nogutter">
+            </div>
+            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2021/11/29/%E5%89%8D%E7%BC%80%E6%A0%91/" style="float: left;">
+        ← 【算法与数据结构】前缀树
+    </a>
+    
+    
+    <a class="pull-right" href="/2021/11/29/%E5%9B%BE%E4%B8%93%E9%A2%98/">
+        【算法与数据结构】图专题 →
+    </a>
+    
+</nav>
 
+                <div class="col-md-8 col-md-offset-2 col-sm-24">
+                    <script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
 
-<section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/29/暴力递归专题/">【算法与数据结构】暴力递归专题</a></h4>
-                            
-                            <p><time datetime="2021-11-29T13:53:57.000Z"><a href="/2021/11/29/暴力递归专题/">2021-11-29</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/29/前缀树/">【算法与数据结构】前缀树</a></h4>
-                            
-                            <p><time datetime="2021-11-29T13:53:29.000Z"><a href="/2021/11/29/前缀树/">2021-11-29</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/29/贪心算法专题/">【算法与数据结构】贪心算法专题</a></h4>
-                            
-                            <p><time datetime="2021-11-29T13:52:50.000Z"><a href="/2021/11/29/贪心算法专题/">2021-11-29</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/29/图专题/">【算法与数据结构】图专题</a></h4>
-                            
-                            <p><time datetime="2021-11-29T13:52:25.000Z"><a href="/2021/11/29/图专题/">2021-11-29</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/25/二叉树专题四-Morris遍历/">【算法与数据结构】二叉树专题四：Morris遍历</a></h4>
-                            
-                            <p><time datetime="2021-11-25T11:48:30.000Z"><a href="/2021/11/25/二叉树专题四-Morris遍历/">2021-11-25</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/24/二叉树专题三-其他/">【算法与数据结构】二叉树专题三：其他</a></h4>
-                            
-                            <p><time datetime="2021-11-24T11:24:40.000Z"><a href="/2021/11/24/二叉树专题三-其他/">2021-11-24</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/23/二叉树专题二-遍历/">【算法与数据结构】二叉树专题二：遍历</a></h4>
-                            
-                            <p><time datetime="2021-11-23T13:36:45.000Z"><a href="/2021/11/23/二叉树专题二-遍历/">2021-11-23</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/23/为何记笔记？/">为何记笔记？</a></h4>
-                            
-                            <p><time datetime="2021-11-23T07:31:47.000Z"><a href="/2021/11/23/为何记笔记？/">2021-11-23</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/23/二叉树专题一-判断/">【算法与数据结构】二叉树专题一：判断</a></h4>
-                            
-                            <p><time datetime="2021-11-23T04:01:02.000Z"><a href="/2021/11/23/二叉树专题一-判断/">2021-11-23</a></time></p>
-                        </div>
-                    
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+
                 </div>
-            </div>    
         </div>
-    </div>
-</section> 
+    </section>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-        </div>
-    </div>
-</section>
       
 <!-- ============================ Footer =========================== -->
 

@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2021/11 | CHANGEA&#39;S BLOG</title>
+  <title>【算法与数据结构】前缀树 | CHANGEA&#39;S BLOG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -217,147 +217,102 @@
     </div>
 
     <!-- ============================ Header & Logo bar =========================== -->
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-
-                    </div>
-                </div>
+      
+    <section id="intro">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <span class="post-meta">
+      <time datetime="2021-11-29T13:53:29.000Z" itemprop="datePublished">
+          2021-11-29
+      </time>
+    
+    
+    | 
+    <a href='/tags/算法与数据结构/'>算法与数据结构</a>
+    
+    
+</span>
+                    <h1>
+                        【算法与数据结构】前缀树
+                    </h1>
             </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
+            <div class="col-md-8 col-md-offset-2">
+                <h3 id="前缀树（不熟）"><a href="#前缀树（不熟）" class="headerlink" title="前缀树（不熟）"></a>前缀树（不熟）</h3><p>若路有很多条，TrieNode节点可以修改为哈希表。</p>
+<p>java代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> pass;    <span class="comment">//经过该节点的次数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> end;     <span class="comment">//以该节点为尾巴的个数</span></span><br><span class="line">    <span class="keyword">public</span> TrieNode[] nexts;  <span class="comment">//该节点拓展的路</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TrieNode</span><span class="params">()</span></span>&#123;</span><br><span class="line">        pass = <span class="number">0</span>;</span><br><span class="line">        end = <span class="number">0</span>;</span><br><span class="line">        nexts = <span class="keyword">new</span> TrieNode[<span class="number">26</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//前缀和的类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Trie</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> TrieNode root = <span class="keyword">new</span> TrieNode();</span><br><span class="line">    <span class="comment">//插入</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(String word)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(word==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">char</span>[] chars = word.toCharArray();</span><br><span class="line">        TrieNode node = root;</span><br><span class="line">        node.pass++;</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> aChar : chars) &#123;</span><br><span class="line">            index = aChar-<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span>(node.nexts[index]==<span class="keyword">null</span>)&#123;</span><br><span class="line">                node.nexts[index] = <span class="keyword">new</span> TrieNode();</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.nexts[index];</span><br><span class="line">            node.pass++;</span><br><span class="line">        &#125;</span><br><span class="line">        node.end++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//word单词出现了几次</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(String word)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(word==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">char</span>[] chars = word.toCharArray();</span><br><span class="line">        TrieNode node = root;</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> aChar : chars) &#123;</span><br><span class="line">            index = aChar-<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span>(node.nexts[index]==<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.nexts[index];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> node.end;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//以pre为前缀的单词出现过几次</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">prefisNumber</span><span class="params">(String pre)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(pre==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">char</span>[] chars = pre.toCharArray();</span><br><span class="line">        TrieNode node = root;</span><br><span class="line">        <span class="keyword">int</span> index=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> aChar : chars) &#123;</span><br><span class="line">            index = aChar-<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span>(node.nexts[index]==<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.nexts[index];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> node.pass;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//删除</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(String word)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(search(word)==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">char</span>[] chars = word.toCharArray();</span><br><span class="line">        TrieNode node = root;</span><br><span class="line">        node.pass--;</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> aChar : chars) &#123;</span><br><span class="line">            index = aChar-<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span>(--node.nexts[index].pass==<span class="number">0</span>)&#123;</span><br><span class="line">                node.nexts[index] = <span class="keyword">null</span>;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.nexts[index];</span><br><span class="line">        &#125;</span><br><span class="line">        node.end--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+                    <div class="clearfix"></div>
+                    <hr class="nogutter">
+            </div>
+            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2021/11/29/%E6%9A%B4%E5%8A%9B%E9%80%92%E5%BD%92%E4%B8%93%E9%A2%98/" style="float: left;">
+        ← 【算法与数据结构】暴力递归专题
+    </a>
+    
+    
+    <a class="pull-right" href="/2021/11/29/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/">
+        【算法与数据结构】贪心算法专题 →
+    </a>
+    
+</nav>
 
-<!-- ============================ END Hero Image =========================== -->
+                <div class="col-md-8 col-md-offset-2 col-sm-24">
+                    <script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
 
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
 
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
 
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
 
-<section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/29/暴力递归专题/">【算法与数据结构】暴力递归专题</a></h4>
-                            
-                            <p><time datetime="2021-11-29T13:53:57.000Z"><a href="/2021/11/29/暴力递归专题/">2021-11-29</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/29/前缀树/">【算法与数据结构】前缀树</a></h4>
-                            
-                            <p><time datetime="2021-11-29T13:53:29.000Z"><a href="/2021/11/29/前缀树/">2021-11-29</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/29/贪心算法专题/">【算法与数据结构】贪心算法专题</a></h4>
-                            
-                            <p><time datetime="2021-11-29T13:52:50.000Z"><a href="/2021/11/29/贪心算法专题/">2021-11-29</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/29/图专题/">【算法与数据结构】图专题</a></h4>
-                            
-                            <p><time datetime="2021-11-29T13:52:25.000Z"><a href="/2021/11/29/图专题/">2021-11-29</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/25/二叉树专题四-Morris遍历/">【算法与数据结构】二叉树专题四：Morris遍历</a></h4>
-                            
-                            <p><time datetime="2021-11-25T11:48:30.000Z"><a href="/2021/11/25/二叉树专题四-Morris遍历/">2021-11-25</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/24/二叉树专题三-其他/">【算法与数据结构】二叉树专题三：其他</a></h4>
-                            
-                            <p><time datetime="2021-11-24T11:24:40.000Z"><a href="/2021/11/24/二叉树专题三-其他/">2021-11-24</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/23/二叉树专题二-遍历/">【算法与数据结构】二叉树专题二：遍历</a></h4>
-                            
-                            <p><time datetime="2021-11-23T13:36:45.000Z"><a href="/2021/11/23/二叉树专题二-遍历/">2021-11-23</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/23/为何记笔记？/">为何记笔记？</a></h4>
-                            
-                            <p><time datetime="2021-11-23T07:31:47.000Z"><a href="/2021/11/23/为何记笔记？/">2021-11-23</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/11/23/二叉树专题一-判断/">【算法与数据结构】二叉树专题一：判断</a></h4>
-                            
-                            <p><time datetime="2021-11-23T04:01:02.000Z"><a href="/2021/11/23/二叉树专题一-判断/">2021-11-23</a></time></p>
-                        </div>
-                    
+</script>
+
                 </div>
-            </div>    
         </div>
-    </div>
-</section> 
+    </section>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-        </div>
-    </div>
-</section>
       
 <!-- ============================ Footer =========================== -->
 

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>【算法与数据结构】图专题 | CHANGEA&#39;S BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="CHANGEA'S BLOG">
+    <meta name="author" content="Zebin Hong">
+    <meta name="description" content="CHANGEA'S BLOG" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="CHANGEA&#39;S BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+<div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+    <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+        <img src="/img/close.png" alt="Close" />
+    </div>
+    <!-- Lists in Slidebars -->
+    <ul class="sb-menu">
+        <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+        <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+        <!-- Dropdown Menu -->
+        
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li>
+                            <a href="https://timemail.net/" target="_BLANK" class="animsition-link">
+                                时光邮局
+                            </a>
+                        </li>
+                        
+                </ul>
+            </li>
+            
+                
+                    <li>
+                        <a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+                        <ul class="sb-submenu">
+                            
+                                <li>
+                                    <a href="/categories/编程/" class="animsition-link">
+                                        编程<small>(9)</small></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/categories/随笔/" class="animsition-link">
+                                        随笔<small>(1)</small></a>
+                                </li>
+                                
+                        </ul>
+                    </li>
+                    
+                        
+                            <li>
+                                <a class="sb-toggle-submenu">Tags<span class="sb-caret"></span></a>
+                                <ul class="sb-submenu">
+                                    
+                                        <li>
+                                            <a href="/tags/git/" class="animsition-link">
+                                                git<small>(1)</small></a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="/tags/算法与数据结构/" class="animsition-link">
+                                                算法与数据结构<small>(8)</small></a>
+                                        </li>
+                                        
+                                </ul>
+                            </li>
+                            
+                                
+                                    <li>
+                                        <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                                        <ul class="sb-submenu">
+                                            
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">
+                                                        Kieran
+                                                    </a>
+                                                </li>
+                                                
+                                                <li>
+                                                    <a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">
+                                                        Name
+                                                    </a>
+                                                </li>
+                                                
+                                        </ul>
+                                    </li>
+                                    
+    </ul>
+    <!-- Lists in Slidebars -->
+    <ul class="sb-menu secondary">
+        
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+                <li><a href="/about/index.html" class="animsition-link" title="about">About</a></li>
+                <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+    </ul>
+</div>
+
+<!-- ============================ END Off-canvas navigation =========================== -->
+
+<!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+<div id="sb-site">
+    <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+    <!-- ============================ Header & Logo bar =========================== -->
+
+    <div id="navigation" class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- Nav logo -->
+                <div class="logo">
+                    <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;" />
+                            
+                    </a>
+                </div>
+                <!-- // Nav logo -->
+                <!-- Info-bar -->
+                <nav>
+                    <ul class="nav">
+                        <li>
+                            <a href="/" class="animsition-link">
+                                CHANGEA'S BLOG
+                            </a>
+                        </li>
+                        <li class="nolink"><span>Always </span>Creative.</li>
+                        
+                            <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                                
+                                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                                    
+                                        
+                                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                                            
+                                                
+                                                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                                                    
+                                                        
+                                                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                                                            
+                                                                <li class="nolink"><span>Welcome!</span></li>
+                    </ul>
+                </nav>
+                <!--// Info-bar -->
+            </div>
+            <!-- // .container -->
+            <div class="learnmore sb-toggle-right">More</div>
+            <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+        </div>
+        <!-- // .navbar-inner -->
+    </div>
+
+    <!-- ============================ Header & Logo bar =========================== -->
+      
+    <section id="intro">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <span class="post-meta">
+      <time datetime="2021-11-29T13:52:25.000Z" itemprop="datePublished">
+          2021-11-29
+      </time>
+    
+    
+    | 
+    <a href='/tags/算法与数据结构/'>算法与数据结构</a>
+    
+    
+</span>
+                    <h1>
+                        【算法与数据结构】图专题
+                    </h1>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <h3 id="1-图的模板结构："><a href="#1-图的模板结构：" class="headerlink" title="1.图的模板结构："></a>1.图的模板结构：</h3><p>图的题目考察的算法是一样的，关键在于给你的图结构千奇百怪，所以需要将题目转化为你常用的结构，再套用自己写的模板即可。所以你需要用自己模板结构将所有算法实现一遍。</p>
+<p>模板结构如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> in;     <span class="comment">//入度</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> out;    <span class="comment">//出度</span></span><br><span class="line">    <span class="keyword">public</span> ArrayList&lt;Node&gt; nexts;  <span class="comment">//由该节点发散出去的边所连的节点集</span></span><br><span class="line">    <span class="keyword">public</span> ArrayList&lt;Edge&gt; edges;  <span class="comment">//该节点发散出去的边</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.value = value;</span><br><span class="line">        <span class="keyword">this</span>.in = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.out = <span class="number">0</span>;</span><br><span class="line">        nexts = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        edges = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Edge</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Node from;</span><br><span class="line">    <span class="keyword">public</span> Node to;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> weight;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Edge</span><span class="params">(Node from,Node to,<span class="keyword">int</span> weight)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.from = from;</span><br><span class="line">        <span class="keyword">this</span>.to = to;</span><br><span class="line">        <span class="keyword">this</span>.weight = weight;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Graph</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Map&lt;Integer,Node&gt; nodes;</span><br><span class="line">    <span class="keyword">public</span> Set&lt;Edge&gt; edges;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Graph</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.nodes = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">this</span>.edges = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建矩阵：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Graph <span class="title">createGraph</span><span class="params">(<span class="keyword">int</span>[][] martix)</span></span>&#123;</span><br><span class="line">    Graph graph = <span class="keyword">new</span> Graph();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;martix.length;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> from = martix[i][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> to = martix[i][<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> weight = martix[i][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">if</span>(!graph.nodes.containsKey(from))&#123;</span><br><span class="line">            graph.nodes.put(from,<span class="keyword">new</span> Node(from));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!graph.nodes.containsKey(to))&#123;</span><br><span class="line">            graph.nodes.put(to,<span class="keyword">new</span> Node(to));</span><br><span class="line">        &#125;</span><br><span class="line">        Node fromNode = graph.nodes.get(from);</span><br><span class="line">        Node toNode = graph.nodes.get(to);</span><br><span class="line">        Edge edge = <span class="keyword">new</span> Edge(fromNode, toNode, weight);</span><br><span class="line">        fromNode.out++;</span><br><span class="line">        fromNode.nexts.add(toNode);</span><br><span class="line">        toNode.in++;</span><br><span class="line">        fromNode.edges.add(edge);</span><br><span class="line">        graph.edges.add(edge);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> graph;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-宽度优先搜索BFS"><a href="#2-宽度优先搜索BFS" class="headerlink" title="2.宽度优先搜索BFS"></a>2.宽度优先搜索BFS</h3><p>思路：准备一个队列，一个集合。开始节点放入队列，循环执行以下操作直到队列为空：</p>
+<p>取出队列元素，判断是否访问过，</p>
+<p>若没有，则打印后（或其他操作），相邻节点放入队列。</p>
+<p>若有，则跳过。</p>
+<p>口诀：<strong>一个队列和集合，取节点，若没看过，操作后入相邻节点。若看过则跳过。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//宽度优先搜索</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bfs</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    Queue&lt;Node&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    Set&lt;Node&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    queue.add(node);</span><br><span class="line">    set.add(node);</span><br><span class="line">    <span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">        Node cur = queue.poll();</span><br><span class="line">        System.out.println(cur);</span><br><span class="line">        <span class="keyword">for</span> (Node next : cur.nexts) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!set.contains(next))&#123;</span><br><span class="line">                queue.add(next);</span><br><span class="line">                set.add(next);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-深度优先搜索DFS"><a href="#3-深度优先搜索DFS" class="headerlink" title="3.深度优先搜索DFS"></a>3.深度优先搜索DFS</h3><p>思路：准备一个栈和集合，执行操作是在每个节点入栈时。第一个节点压栈，进集合，执行以下操作知道栈为空：</p>
+<p>栈中弹出一个节点node，找到该节点的第一个未访问过的子节点，node节点和子节点压回栈中（这里还将node压回去，是为了等会回来继续对该node的其他子节点进行操作）。找不到则不操作。</p>
+<p>口诀：<strong>一个栈一个集合，找没看过的，父子节点一起进栈。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//深度优先搜索</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    Stack&lt;Node&gt; st = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    Set&lt;Node&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    st.push(node);</span><br><span class="line">    set.add(node);</span><br><span class="line">    System.out.println(node.value);</span><br><span class="line">    <span class="keyword">while</span>(!st.empty())&#123;</span><br><span class="line">        Node cur = st.pop();</span><br><span class="line">        <span class="keyword">for</span> (Node next : cur.nexts) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!set.contains(next))&#123;	</span><br><span class="line">                st.push(cur);</span><br><span class="line">                st.push(next);</span><br><span class="line">                set.add(next);</span><br><span class="line">                System.out.println(next.value);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-拓扑排序"><a href="#4-拓扑排序" class="headerlink" title="4.拓扑排序"></a>4.拓扑排序</h3><blockquote>
+<p>适用范围：要求有向图，且有入度为0的节点，且没有环</p>
+</blockquote>
+<p>思路：在有向图中依次找到入度为0的点，找到该点就删除该点的影响，依次输出。</p>
+<p>口诀：<strong>依次删除入度为0的点</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//拓扑排序</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Node&gt; <span class="title">sortedTopology</span><span class="params">(Graph graph)</span></span>&#123;</span><br><span class="line">    List&lt;Node&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Queue&lt;Node&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    Map&lt;Node,Integer&gt; inmap = <span class="keyword">new</span> HashMap&lt;&gt;();    <span class="comment">//哈希表map用来存储节点和该节点的入度</span></span><br><span class="line">    <span class="keyword">for</span> (Node newNode : graph.nodes.values()) &#123; 	<span class="comment">//初始化哈希表inmap</span></span><br><span class="line">        inmap.put(newNode,newNode.in);</span><br><span class="line">        <span class="keyword">if</span>(inmap.get(newNode)==<span class="number">0</span>)             </span><br><span class="line">            queue.add(newNode);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">        Node cur = queue.poll();</span><br><span class="line">        result.add(cur);</span><br><span class="line">        <span class="keyword">for</span> (Node next : cur.nexts) &#123;       <span class="comment">//相当于去除该节点，以及其他节点的影响</span></span><br><span class="line">            next.in--;</span><br><span class="line">            <span class="keyword">if</span>(next.in==<span class="number">0</span>)</span><br><span class="line">                queue.add(next);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-最小生成树"><a href="#5-最小生成树" class="headerlink" title="5.最小生成树"></a>5.最小生成树</h3><h4 id="1-kruskal算法"><a href="#1-kruskal算法" class="headerlink" title="1.kruskal算法"></a>1.kruskal算法</h4><p>使用范围：无向图</p>
+<p>思路：准备<strong>堆</strong>，依次从小到大选择边：</p>
+<ul>
+<li>若边的两个点不属于同一个集合，添加到结果集中。点集合并。</li>
+<li>若是同一个集合中，则不添加。</li>
+</ul>
+<p>遍历所有的边后结束。集合的合并，涉及到并查集。</p>
+<p>口诀：<strong>从小到大，选择边，同一集合的除外。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MySet</span></span>&#123;</span><br><span class="line">    <span class="comment">//集合的操作</span></span><br><span class="line">    Map&lt;Node,Set&lt;Node&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MySet</span><span class="params">(Collection&lt;Node&gt; nodes)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (Node node : nodes) &#123;        <span class="comment">//初始化集合</span></span><br><span class="line">            Set&lt;Node&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">            set.add(node);</span><br><span class="line">            map.put(node,set);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">theSameSet</span><span class="params">(Node from,Node to)</span></span>&#123;   <span class="comment">//判断集合是否相同</span></span><br><span class="line">        Set&lt;Node&gt; fromSet = map.get(from);</span><br><span class="line">        Set&lt;Node&gt; toSet = map.get(to);</span><br><span class="line">        <span class="keyword">return</span> fromSet == toSet;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unionSet</span><span class="params">(Node from,Node to)</span></span>&#123;        <span class="comment">//合并集合</span></span><br><span class="line">        Set&lt;Node&gt; fromSet = map.get(from);</span><br><span class="line">        Set&lt;Node&gt; toSet = map.get(to);</span><br><span class="line">        <span class="keyword">for</span> (Node node : toSet) &#123;      <span class="comment">//toNode添加到fromNode中</span></span><br><span class="line">            fromSet.add(node);</span><br><span class="line">            map.put(node,fromSet);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">EdgeComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">Edge</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Edge o1, Edge o2)</span> </span>&#123;      <span class="comment">//从小到大</span></span><br><span class="line">        <span class="keyword">return</span> o1.weight - o2.weight;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//kruskal算法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Set&lt;Edge&gt; <span class="title">kruskalMST</span><span class="params">(Graph g)</span></span>&#123;</span><br><span class="line">    Set&lt;Edge&gt; result = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    MySet mySet = <span class="keyword">new</span> MySet(g.nodes.values());	<span class="comment">//创建集合并初始化</span></span><br><span class="line">    PriorityQueue&lt;Edge&gt; queue = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="keyword">new</span> EdgeComparator());</span><br><span class="line">    <span class="keyword">for</span> (Edge edge : g.edges) &#123;         <span class="comment">//初始化队列</span></span><br><span class="line">        queue.add(edge);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">        Edge curEdge = queue.poll();</span><br><span class="line">        <span class="keyword">if</span>(!mySet.theSameSet(curEdge.from,curEdge.to))&#123; <span class="comment">//不同集合时将节点插入结果集中。</span></span><br><span class="line">            result.add(curEdge);</span><br><span class="line">            mySet.unionSet(curEdge.from,curEdge.to);       <span class="comment">//合并集合</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-prim算法"><a href="#2-prim算法" class="headerlink" title="2.prim算法"></a>2.prim算法</h4><p>使用范围：无向图</p>
+<p>思路：准备一个<strong>堆</strong>和集合，每遍历一个点，就将它放到集合中去，将它的相邻边放到堆中去。对每一条边做以下操作直到堆为空：</p>
+<p>若选择该边能拽进来一个新的节点，就将该边添加到结果集中；</p>
+<p>若不能，则跳过继续选择。</p>
+<p>口诀：<strong>选能拽进新节点的最小边，解锁相应边。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">EdgeComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">Edge</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Edge o1, Edge o2)</span> </span>&#123;      <span class="comment">//从小到大</span></span><br><span class="line">        <span class="keyword">return</span> o1.weight - o2.weight;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//prim算法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Set&lt;Edge&gt; <span class="title">primMST</span><span class="params">(Graph g)</span></span>&#123;</span><br><span class="line">    Set&lt;Edge&gt; result = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    Set&lt;Node&gt; nodeSet = <span class="keyword">new</span> HashSet&lt;&gt;();    <span class="comment">//用来存放已经选择好的节点</span></span><br><span class="line">    PriorityQueue&lt;Edge&gt; queue = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="keyword">new</span> EdgeComparator());</span><br><span class="line">    <span class="keyword">for</span> (Node node : g.nodes.values()) &#123;        <span class="comment">//解决出现森林的情况</span></span><br><span class="line">        <span class="keyword">if</span>(!nodeSet.contains(node))&#123;</span><br><span class="line">            nodeSet.add(node);</span><br><span class="line">            <span class="keyword">for</span> (Edge edge : node.edges) &#123;      <span class="comment">//解锁边添加到队列中</span></span><br><span class="line">                queue.add(edge);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">                Edge curEdge = queue.poll();</span><br><span class="line">                <span class="keyword">if</span>(!nodeSet.contains(curEdge.to))&#123;  <span class="comment">//to节点不在集合中时，是想要的边</span></span><br><span class="line">                    result.add(curEdge);</span><br><span class="line">                    nodeSet.add(curEdge.to);</span><br><span class="line">                    <span class="keyword">for</span> (Edge e : curEdge.to.edges) &#123;   <span class="comment">//解锁边添加到队列中</span></span><br><span class="line">                        queue.add(e);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Dijkstra算法"><a href="#6-Dijkstra算法" class="headerlink" title="6.Dijkstra算法"></a>6.Dijkstra算法</h3><blockquote>
+<p>什么是Dijkstra算法：给一个起始节点，找出从起始节点到达其他所有节点的最短距离</p>
+<p>使用范围：没有权值为负值的边        </p>
+</blockquote>
+<p>思路：维护一个<strong>列表</strong>，存放的是起始节点到其他节点的最短距离，达到不了的节点距离设为无穷大，节点自己到自己的距离设置为0。</p>
+<p>每次从列表中选出一个值最小的节点，对该点涉及的边进行遍历，更新列表的值。更新完就锁掉节点。更新的规则如下：</p>
+<p>若某节点node本来的最短距离是a，在新选出节点的基础上到达node的新距离是b，对a，b取出最小，即为新的最短距离。</p>
+<p>直到所有的点都被锁掉结束。</p>
+<img src="D:\appdata\typora_picture\image-20211128155335604.png" alt="image-20211128155335604" style="zoom:50%;" />
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Dijkstra算法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HashMap&lt;Node,Integer&gt; <span class="title">dj</span><span class="params">(Node head)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    HashMap&lt;Node,Integer&gt; minDistance = <span class="keyword">new</span> HashMap&lt;&gt;();    <span class="comment">//key是图中的节点，value是从head节点到达key的最短距离</span></span><br><span class="line">    HashSet&lt;Node&gt; selectedNode = <span class="keyword">new</span> HashSet&lt;&gt;();   <span class="comment">//选过的节点，即放入该集合相当于锁上了</span></span><br><span class="line">    minDistance.put(head,<span class="number">0</span>);    <span class="comment">//自己到自己的最短距离是0</span></span><br><span class="line">    Node minNode = getMinNodeByMinDis(minDistance, selectedNode);</span><br><span class="line">    <span class="keyword">while</span>(minNode != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> distance = minDistance.get(minNode);</span><br><span class="line">        <span class="keyword">for</span> (Edge edge : minNode.edges) &#123;</span><br><span class="line">            Node toNode = edge.to;</span><br><span class="line">            <span class="keyword">if</span>(!minDistance.containsKey(toNode))&#123;   <span class="comment">//若没有设置过</span></span><br><span class="line">                minDistance.put(toNode,distance+edge.weight);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//重点代码，容易出错</span></span><br><span class="line">            minDistance.put(toNode,Math.min(distance+edge.weight,minDistance.get(toNode)));</span><br><span class="line">        &#125;</span><br><span class="line">        selectedNode.add(minNode);</span><br><span class="line">        minNode = getMinNodeByMinDis(minDistance, selectedNode);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> minDistance;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取最小距离的节点</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Node <span class="title">getMinNodeByMinDis</span><span class="params">(Map&lt;Node, Integer&gt; minDistance, Set&lt;Node&gt; selectedNode)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> minValue = Integer.MAX_VALUE;</span><br><span class="line">    Node minNode = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">for</span> (Map.Entry&lt;Node, Integer&gt; entry : minDistance.entrySet()) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!selectedNode.contains(entry.getKey()) &amp;&amp; entry.getValue() &lt; minValue)&#123;</span><br><span class="line">            minNode = entry.getKey();</span><br><span class="line">            minValue = entry.getValue();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> minNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                    <div class="clearfix"></div>
+                    <hr class="nogutter">
+            </div>
+            <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2021/11/29/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98/" style="float: left;">
+        ← 【算法与数据结构】贪心算法专题
+    </a>
+    
+    
+    <a class="pull-right" href="/2021/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%93%E9%A2%98%E5%9B%9B-Morris%E9%81%8D%E5%8E%86/">
+        【算法与数据结构】二叉树专题四：Morris遍历 →
+    </a>
+    
+</nav>
+
+                <div class="col-md-8 col-md-offset-2 col-sm-24">
+                    <script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+
+                </div>
+        </div>
+    </section>
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Zebin Hong. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/CHANGEA-code" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>
